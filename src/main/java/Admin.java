@@ -2,7 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 public class Admin {
     public List<Worker> findByNameWorker = new ArrayList<>();
-    private String email , password;
+    private String email ;
+    private String password;
 
 
     public String getEmail() {
