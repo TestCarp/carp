@@ -1,6 +1,12 @@
         import java.util.ArrayList;
         import java.util.List;
+
+        import java.util.logging.Level;
+        import java.util.logging.Logger;
         public class Admin {
+
+            Logger myLogs = Logger.getLogger(Admin.class.getName());
+
             public List<Worker> findByNameWorker = new ArrayList<>();
             private String email ;
             private String password;
@@ -83,10 +89,18 @@
                 }
 
                 // multiply of 100 instead of write information for 100 workers
-                System.out.println("Total number of workers: "+(actualNumberOfWorkers*100));
-                System.out.println("The number of Orders: "+actualNumberOfOrders);
-                System.out.println("The number of bussy Worker: "+(4*actualNumberOfOrders));
-                System.out.println("The number of available worker: "+((actualNumberOfWorkers*100) - (4*actualNumberOfOrders)));
+//                System.out.println("Total number of workers: "+(actualNumberOfWorkers*100));
+//                System.out.println("The number of Orders: "+actualNumberOfOrders);
+//                System.out.println("The number of bussy Worker: "+(4*actualNumberOfOrders));
+//                System.out.println("The number of available worker: "+((actualNumberOfWorkers*100) - (4*actualNumberOfOrders)));
+
+                myLogs.log(Level.INFO,"Total number of workers: "+(actualNumberOfWorkers*100));
+                myLogs.log(Level.INFO,"The number of Orders: "+actualNumberOfOrders);
+                myLogs.log(Level.INFO,"The number of bussy Worker: "+(4*actualNumberOfOrders));
+                myLogs.log(Level.INFO,"The number of available worker: "+((actualNumberOfWorkers*100) - (4*actualNumberOfOrders)));
+
+
+
             }
 
 
