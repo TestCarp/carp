@@ -7,10 +7,13 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-public class controlClass {
+public class control_class {
 
     public static void main(String[] args){
+        Logger logger = Logger.getLogger(control_class.class.getName());
         // Email Sender Code
 
         // Recipient's email ID needs to be mentioned.
@@ -61,10 +64,13 @@ public class controlClass {
             // Now set the actual message
             message.setText("This is actual message");
 
-            System.out.println("sending...");
+
+            logger.log(Level.INFO , "sending...");
+
             // Send message
             Transport.send(message);
-            System.out.println("Sent message successfully....");
+
+
         } catch (MessagingException mex) {
             mex.printStackTrace();
         }
@@ -73,7 +79,7 @@ public class controlClass {
 
 
 
-        ////////////////////////////////////////////////////////////// End code of Send Email
+
 
 
 
@@ -81,7 +87,7 @@ public class controlClass {
         Worker w1 = new Worker();
         Admin a = new Admin();
         product p1 = new product(1,"Tufted Carpets","https://persiancarpet.com/images/making-a-tufted-rug.jpg","400X300",99.99,true,1);
-        product p2 = new product(2,"Tufted Carpets","https://persiancarpet.com/images/making-a-tufted-rug.jpg","400X300",99.99,true,1);
+        product p2 = new product(2,"Tufted Carpets1","https://persiancarpet.com/images/making-a-tufted-rugf.jpg","500X200",99.99,true,1);
 
         w1.addProduct(p1);
         Customer c1 = new Customer(1,"Abdullah Ghassan Sholi" , "0592659066" , "Asira-Nablus" , "groupgroup060@gmail.com",200,100);
@@ -90,14 +96,13 @@ public class controlClass {
         w1.addCustomer(c2);
         w1.generateStatistics();
 
-        /////////////////////////////////////////////
 
-        // System.out.println(w1.getNumberOfProducts());
-        // product p2 = new product(2,"Tufted Carpets","https://persiancarpet.com/images/making-a-tufted-rug.jpg","400X300",99.99,true,1);
-        product p3 = new product(3,"Tufted Carpets","https://persiancarpet.com/images/making-a-tufted-rug.jpg","400X300",99.99,false,1);
-        product p4 = new product(4,"Tufted Carpets","https://persiancarpet.com/images/making-a-tufted-rug.jpg","400X300",99.99,false,2);
-        product p5 = new product(5,"Tufted Carpets","https://persiancarpet.com/images/making-a-tufted-rug.jpg","400X300",99.99,false,3);
-        product p6 = new product(6,"Tufted Carpets","https://persiancarpet.com/images/making-a-tufted-rug.jpg","400X300",99.99,true,1);
+
+
+        product p3 = new product(3,"Tufted Carpets2","https://persiancarpet.com/images/making-a-tufted-e.jpg","700X100",99.99,false,1);
+        product p4 = new product(4,"Tufted Carpets3","https://persiancarpet.com/images/making-a-tufted-ruge.jpg","410X340",99.99,false,2);
+        product p5 = new product(5,"Tufted Carpets4","https://persiancarpet.com/images/making-a-tufted-ruga.jpg","415X330",99.99,false,3);
+        product p6 = new product(6,"Tufted Carpets5","https://persiancarpet.com/images/making-a-tufted-rugw.jpg","503X440",99.99,true,1);
         w1.addProduct(p2);
         w1.addProduct(p3);
         w1.addProduct(p4);
@@ -107,7 +112,7 @@ public class controlClass {
         a.distributeWorkerOnProducts(w1.getNumberOfProducts());
 
 
-        ////////////////////////////
+
 
         // enter id for product to check status
         // product status --- >  1 == complete
@@ -115,10 +120,13 @@ public class controlClass {
         //                       3 == waiting
         w1.trackOrder(3);
 
-        //////////////////////////////////
-        System.out.println("----------------");
+
+
+        logger.log(Level.INFO , "----------------");
         w1.printDiscount(1);
-        System.out.println("----------------");
+
+
+        logger.log(Level.INFO , "----------------");
         w1.generateInvoice(1,1);
 
         w1.orderStatus(1,2,"khaled.sholi2@gmail.com");
