@@ -88,11 +88,6 @@
                     actualNumberOfWorkers++;
                 }
 
-                // multiply of 100 instead of write information for 100 workers
-//                System.out.println("Total number of workers: "+(actualNumberOfWorkers*100));
-//                System.out.println("The number of Orders: "+actualNumberOfOrders);
-//                System.out.println("The number of bussy Worker: "+(4*actualNumberOfOrders));
-//                System.out.println("The number of available worker: "+((actualNumberOfWorkers*100) - (4*actualNumberOfOrders)));
 
                 logger.log(Level.INFO,"Total number of workers: ",(actualNumberOfWorkers*100));
                 logger.log(Level.INFO,"The number of Orders: ",actualNumberOfOrders);
