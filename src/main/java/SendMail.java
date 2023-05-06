@@ -2,9 +2,13 @@ import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class SendMail {
+    private SendMail(){}
     public static void getSendEmail(String toUserMessage,String email){
+        Logger logger = Logger.getLogger(SendMail.class.getName());
         // Recipient's email ID needs to be mentioned.
         String to = email;
 
@@ -19,18 +23,19 @@ public class SendMail {
 
         // Setup mail server
         properties.put("mail.smtp.host",host);
-        System.out.println(111111);
+
         properties.put("mail.smtp.port","465");
-        System.out.println(222222);
+
         properties.put("mail.smtp.ssl.enable","true");
-        System.out.println(333333);
+
         properties.put("mail.smtp.auth","true");
-        System.out.println(444444);
+
         // Get the Session object.// and pass username and password
         Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
 
+            @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                // xfkaufcrlbyfjpri
+
                 return new PasswordAuthentication("groupgroup060@gmail.com", "nseewneyladintsu");
 
             }
@@ -45,24 +50,25 @@ public class SendMail {
         {
             // Create a default MimeMessage object.
             MimeMessage message = new MimeMessage(session);
-            System.out.println(555555);
+
             // Set From: header field of the header.
             message.setFrom(new InternetAddress(from));
-            System.out.println(111111);
+
 
             // Set To: header field of the header.
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-            System.out.println(222222);
+
             // Set Subject: header field
             message.setSubject("Your Order Status!!");
 
             // Now set the actual message
             message.setText("Your Order Status is : \n "+toUserMessage);
 
-            System.out.println("sending...");
+
+            logger.log (Level.INFO,"sending...");
             // Send message
             Transport.send(message);
-            System.out.println("Sent message successfully....");
+            logger.log(Level.INFO,"Sent message successfully....");
         } catch(MessagingException mex)
 
         {
