@@ -7,7 +7,7 @@
 
             Logger logger = Logger.getLogger(Admin.class.getName());
 
-            public List<Worker> findByNameWorker = new ArrayList<>();
+            protected List<Worker> findByNameWorker = new ArrayList<>();
             private String email ;
             private String password;
 
@@ -68,10 +68,10 @@
                 int neededIndex = 0;
                 for(Worker worker : findByNameWorker) {
                     boolean temp = searchWorker(id);
-                    logger.log(Level.INFO,"",temp);
+
                     if(temp){
                         neededIndex = findByNameWorker.indexOf(worker);
-                        logger.log(Level.INFO,"",findByNameWorker.indexOf(worker));
+
                         return  true;
                     }
 
@@ -88,11 +88,14 @@
                     actualNumberOfWorkers++;
                 }
 
-
-                logger.log(Level.INFO,"Total number of workers: ",(actualNumberOfWorkers*100));
-                logger.log(Level.INFO,"The number of Orders: ",actualNumberOfOrders);
-                logger.log(Level.INFO,"The number of bussy Worker: ",(4*actualNumberOfOrders));
-                logger.log(Level.INFO,"The number of available worker: ",((actualNumberOfWorkers*100) - (4*actualNumberOfOrders)));
+                String message1 = String.format("Total number of workers: %d",(actualNumberOfWorkers*100));
+                String message2 = String.format("The number of Orders: %d",actualNumberOfOrders);
+                String message3 = String.format("The number of bussy Worker: %d",(4*actualNumberOfOrders));
+                String message4 = String.format("The number of available worker: %d",((actualNumberOfWorkers*100) - (4*actualNumberOfOrders)));
+                logger.log(Level.INFO,message1);
+                logger.log(Level.INFO,message2);
+                logger.log(Level.INFO,message3);
+                logger.log(Level.INFO,message4);
 
 
 
