@@ -1,7 +1,11 @@
 public class Customer {
     private int id ;
-    private String name , phone , address , email;
-    private double totalPay , totalDebts;
+    private String name ;
+    private String phone ;
+    private String address ;
+    private String email;
+    private double totalPay ;
+    private double totalDebts;
 
     public Customer(){}
     public Customer(int id , String name , String phone , String address , String email , double totalPay , double totalDebts){
