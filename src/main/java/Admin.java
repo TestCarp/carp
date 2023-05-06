@@ -32,11 +32,11 @@
             public boolean addWorker(Worker newWorker){
                 for(Worker oldWorker : findByNameWorker){
                     if(oldWorker.getId()==(newWorker.getId())){
-                        System.out.println("Worker is Exist");
+                        logger.log(Level.INFO,"Worker is Exist");
                         return true;
                     }
                 }
-                System.out.println("Worker will added to list");
+                logger.log(Level.INFO,"Worker will added to list");
                 findByNameWorker.add(newWorker);
                 return false;
             }
@@ -44,23 +44,23 @@
             public boolean searchWorker(int id){
                 for(Worker existWorker : findByNameWorker){
                     if(existWorker.getId() == (id)){
-                        System.out.println("Exist");
+                        logger.log(Level.INFO,"Exist");
                         return true;
                     }
                 }
-                System.out.println("Not Exist");
+                logger.log(Level.INFO,"Not Exist");
                 return false;
             }
 
             public boolean deleteWorker(int id){
                 for(Worker existWorker : findByNameWorker){
                     if(existWorker.getId()== (id)){
-                        System.out.println("Exist");
+                        logger.log(Level.INFO,"Exist");
                         findByNameWorker.removeIf(n -> (n.getId() == (id)));
                         return true;
                     }
                 }
-                System.out.println("Not Exist");
+                logger.log(Level.INFO,"Not Exist");
                 return false;
             }
 
@@ -68,10 +68,10 @@
                 int neededIndex = 0;
                 for(Worker worker : findByNameWorker) {
                     boolean temp = searchWorker(id);
-                    System.out.println(temp);
+                    logger.log(Level.INFO,"",temp);
                     if(temp){
                         neededIndex = findByNameWorker.indexOf(worker);
-                        System.out.println(findByNameWorker.indexOf(worker));
+                        logger.log(Level.INFO,"",findByNameWorker.indexOf(worker));
                         return  true;
                     }
 
