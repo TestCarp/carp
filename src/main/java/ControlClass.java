@@ -10,10 +10,10 @@ import javax.mail.internet.MimeMessage;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class control_class {
+public class ControlClass {
 
     public static void main(String[] args){
-        Logger logger = Logger.getLogger(control_class.class.getName());
+        Logger logger = Logger.getLogger(ControlClass.class.getName());
         // Email Sender Code
 
         // Recipient's email ID needs to be mentioned.
@@ -36,7 +36,6 @@ public class control_class {
 
         // Get the Session object.// and pass username and password
         Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
-
 
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {

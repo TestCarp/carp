@@ -57,23 +57,22 @@ public class Worker {
     public boolean searchProduct(int id){
         for(product existProduct : findByNameProduct){
             if(existProduct.getProductId() ==(id)){
-                System.out.println("Exist");
+
                 return true;
             }
         }
-        System.out.println("Not Exist");
+
         return false;
     }
 
     public boolean deleteProduct(int id){
         for(product existProduct : findByNameProduct){
             if(existProduct.getProductId()== (id)){
-                System.out.println("Exist");
                 findByNameProduct.removeIf(n -> (n.getProductId() == (id)));
                 return true;
             }
         }
-        System.out.println("Not Exist");
+
         return false;
     }
 
@@ -117,11 +116,11 @@ public class Worker {
     public boolean searchCustomer(int id){
         for(Customer existCustomer : findByNameCustomer){
             if(existCustomer.getId() == id){
-                System.out.println("Exist");
+
                 return true;
             }
         }
-        System.out.println("Not Exist");
+
         return false;
     }
 
@@ -327,7 +326,7 @@ public class Worker {
 
     public void orderStatus(int productId,int customerId,String email) {
         String status = "";
-        int flag = 0 ;
+
         for (int i = 0; i < findByNameProduct.size(); i++) {
             if (searchCustomer(customerId) && searchProduct(productId) && searchCustomerByEmail(email)) {
                 if(findByNameProduct.get(i).productStatus == 1 && findByNameProduct.get(i).getProductId() == productId){
