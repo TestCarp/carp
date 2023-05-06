@@ -5,7 +5,7 @@
         import java.util.logging.Logger;
         public class Admin {
 
-            Logger myLogs = Logger.getLogger(Admin.class.getName());
+            Logger logger = Logger.getLogger(Admin.class.getName());
 
             public List<Worker> findByNameWorker = new ArrayList<>();
             private String email ;
@@ -94,10 +94,10 @@
 //                System.out.println("The number of bussy Worker: "+(4*actualNumberOfOrders));
 //                System.out.println("The number of available worker: "+((actualNumberOfWorkers*100) - (4*actualNumberOfOrders)));
 
-                myLogs.log(Level.INFO,"Total number of workers: "+(actualNumberOfWorkers*100));
-                myLogs.log(Level.INFO,"The number of Orders: "+actualNumberOfOrders);
-                myLogs.log(Level.INFO,"The number of bussy Worker: "+(4*actualNumberOfOrders));
-                myLogs.log(Level.INFO,"The number of available worker: "+((actualNumberOfWorkers*100) - (4*actualNumberOfOrders)));
+                logger.log(Level.INFO,"Total number of workers: ",(actualNumberOfWorkers*100));
+                logger.log(Level.INFO,"The number of Orders: ",actualNumberOfOrders);
+                logger.log(Level.INFO,"The number of bussy Worker: ",(4*actualNumberOfOrders));
+                logger.log(Level.INFO,"The number of available worker: ",((actualNumberOfWorkers*100) - (4*actualNumberOfOrders)));
 
 
 
