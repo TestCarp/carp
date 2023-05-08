@@ -3,7 +3,7 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = {"classpath:addProduct.feature","classpath:feature.feature","classpath:deleteFeature.feature","classpath:generateStatistics.feature","classpath:distributeWorkerOnProduct.feature","classpath:TracKOrder.feature","classpath:discount.feature"},
+@CucumberOptions(features = {"classpath:addProduct.feature","classpath:feature.feature","classpath:deleteFeature.feature","classpath:generateStatistics.feature","classpath:distributeWorkerOnProduct.feature","classpath:TracKOrder.feature","classpath:discount.feature","classpath:recoredProductInformations.feature"},
 
                 plugin = "html:target/cucumber/wikipedia.html"
 )

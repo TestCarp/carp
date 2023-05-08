@@ -85,11 +85,4 @@ public class product {
     }
 
 
-    public boolean getIsComplete() {
-        return isComplete;
-    }
-
-    public void setIsComplete(boolean complete) {
-        isComplete = complete;
-    }
 }

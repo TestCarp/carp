@@ -1,0 +1,450 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > Worker</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">&lt;empty package name&gt;</a>
+</div>
+
+<h1>Coverage Summary for Class: Worker (&lt;empty package name&gt;)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Worker</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    84.6%
+  </span>
+  <span class="absValue">
+    (22/26)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    50.7%
+  </span>
+  <span class="absValue">
+    (112/221)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;import java.util.ArrayList;
+&nbsp;import java.util.List;
+&nbsp;import java.util.logging.Level;
+&nbsp;import java.util.logging.Logger;
+&nbsp;
+&nbsp;public class Worker {
+<b class="fc">&nbsp;    private int id ;</b>
+<b class="fc">&nbsp;</b>
+&nbsp;
+&nbsp;    private String name ;
+<b class="nc">&nbsp;    private String phone ;</b>
+<b class="nc">&nbsp;    private String address ;</b>
+<b class="fc">&nbsp;    protected List&lt;product&gt; findByNameProduct = new ArrayList&lt;&gt;();</b>
+<b class="fc">&nbsp;    protected List&lt;Customer&gt; findByNameCustomer = new ArrayList&lt;&gt;();</b>
+<b class="nc">&nbsp;</b>
+<b class="fc">&nbsp;    Logger logger = Logger.getLogger(Worker.class.getName());</b>
+<b class="fc">&nbsp;    public Worker(int id , String name , String address , String phone){</b>
+<b class="nc">&nbsp;        this.id = id ;</b>
+<b class="nc">&nbsp;        this.name = name;</b>
+<b class="nc">&nbsp;        this.address = address;</b>
+<b class="fc">&nbsp;        this.phone = phone;</b>
+&nbsp;    }
+<b class="fc">&nbsp;    public Worker(){}</b>
+<b class="fc">&nbsp;    // Setters and Getters</b>
+&nbsp;
+&nbsp;    public void setId(int id){
+<b class="fc">&nbsp;        this.id = id;</b>
+&nbsp;    }
+&nbsp;    public void setName(String name) {
+<b class="fc">&nbsp;        this.name = name;</b>
+&nbsp;    }
+&nbsp;    public void setAddress(String address) {
+<b class="fc">&nbsp;        this.address = address;</b>
+&nbsp;    }
+&nbsp;    public void setPhone(String phone) {
+<b class="fc">&nbsp;        this.phone = phone;</b>
+&nbsp;    }
+&nbsp;    public int getId() {
+<b class="fc">&nbsp;        return id;</b>
+&nbsp;    }
+&nbsp;    public String getName() {
+<b class="nc">&nbsp;        return name;</b>
+&nbsp;    }
+&nbsp;    public String getAddress() {
+<b class="nc">&nbsp;        return address;</b>
+<b class="fc">&nbsp;    }</b>
+<b class="fc">&nbsp;    public String getPhone() {</b>
+<b class="nc">&nbsp;        return phone;</b>
+<b class="nc">&nbsp;    }</b>
+&nbsp;
+<b class="fc">&nbsp;    public boolean addProduct(product newProduct){</b>
+<b class="fc">&nbsp;        for(product oldProduct : findByNameProduct){</b>
+<b class="fc">&nbsp;            if(oldProduct.getProductId()==(newProduct.getProductId())){</b>
+<b class="fc">&nbsp;</b>
+<b class="nc">&nbsp;                return true;</b>
+&nbsp;            }
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;</b>
+<b class="fc">&nbsp;        findByNameProduct.add(newProduct);</b>
+<b class="fc">&nbsp;        return false;</b>
+<b class="fc">&nbsp;    }</b>
+&nbsp;
+<b class="nc">&nbsp;    public boolean searchProduct(int id){</b>
+<b class="fc">&nbsp;        for(product existProduct : findByNameProduct){</b>
+<b class="fc">&nbsp;            if(existProduct.getProductId() ==(id)){</b>
+&nbsp;
+<b class="fc">&nbsp;                return true;</b>
+&nbsp;            }
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;</b>
+<b class="fc">&nbsp;        return false;</b>
+<b class="fc">&nbsp;    }</b>
+&nbsp;
+<b class="fc">&nbsp;    public boolean deleteProduct(int id){</b>
+<b class="fc">&nbsp;        for(product existProduct : findByNameProduct){</b>
+<b class="fc">&nbsp;            if(existProduct.getProductId()== (id)){</b>
+<b class="fc">&nbsp;                findByNameProduct.removeIf(n -&gt; (n.getProductId() == (id)));</b>
+<b class="fc">&nbsp;                return true;</b>
+&nbsp;            }
+<b class="fc">&nbsp;        }</b>
+<b class="nc">&nbsp;</b>
+<b class="fc">&nbsp;        return false;</b>
+<b class="nc">&nbsp;    }</b>
+<b class="nc">&nbsp;</b>
+<b class="nc">&nbsp;    public boolean updateProduct(product toUpdate,int id){</b>
+<b class="nc">&nbsp;        int neededIndex = 0;</b>
+<b class="nc">&nbsp;        for(product product : findByNameProduct) {</b>
+<b class="nc">&nbsp;            boolean temp = searchProduct(id);</b>
+&nbsp;
+<b class="nc">&nbsp;            logger.log(Level.INFO,&quot;{0}&quot;,temp);</b>
+<b class="nc">&nbsp;            if(temp){</b>
+<b class="nc">&nbsp;                logger.log(Level.INFO,&quot;{0}&quot;,findByNameProduct.indexOf(product));</b>
+<b class="nc">&nbsp;                return  true;</b>
+&nbsp;            }
+&nbsp;
+<b class="nc">&nbsp;        }</b>
+<b class="nc">&nbsp;        findByNameProduct.set(neededIndex-1,toUpdate);</b>
+<b class="nc">&nbsp;        return false;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;    /////
+&nbsp;    ////////////////////////////////////////////////////////////////////////
+<b class="fc">&nbsp;    // Customer Methods</b>
+<b class="fc">&nbsp;</b>
+<b class="nc">&nbsp;</b>
+<b class="nc">&nbsp;    // add new Customer Method</b>
+&nbsp;
+<b class="fc">&nbsp;    public boolean addCustomer(Customer newCustomer){</b>
+<b class="fc">&nbsp;        for(Customer oldCustomer : findByNameCustomer){</b>
+<b class="fc">&nbsp;            if(oldCustomer.getId() == newCustomer.getId() || oldCustomer.getEmail() .equals(newCustomer.getEmail()) || oldCustomer.getPhone() .equals(newCustomer.getPhone())){</b>
+<b class="fc">&nbsp;                return true;</b>
+&nbsp;            }
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;        findByNameCustomer.add(newCustomer);</b>
+<b class="fc">&nbsp;        return false;</b>
+<b class="fc">&nbsp;    }</b>
+<b class="fc">&nbsp;</b>
+&nbsp;    // /////  Search about specific Customer Method
+<b class="fc">&nbsp;    public boolean searchCustomer(int id){</b>
+<b class="fc">&nbsp;        for(Customer existCustomer : findByNameCustomer){</b>
+<b class="fc">&nbsp;            if(existCustomer.getId() == id){</b>
+&nbsp;
+<b class="fc">&nbsp;                return true;</b>
+&nbsp;            }
+<b class="fc">&nbsp;        }</b>
+&nbsp;
+<b class="nc">&nbsp;        return false;</b>
+&nbsp;    }
+<b class="nc">&nbsp;</b>
+<b class="nc">&nbsp;    // Search about Customer using (email)</b>
+<b class="nc">&nbsp;</b>
+<b class="nc">&nbsp;    public boolean searchCustomerByEmail(String email){</b>
+<b class="fc">&nbsp;        for(Customer existCustomer : findByNameCustomer){</b>
+<b class="fc">&nbsp;            if(existCustomer.getEmail().equals(email)){</b>
+<b class="fc">&nbsp;                return true;</b>
+<b class="nc">&nbsp;            }</b>
+<b class="fc">&nbsp;        }</b>
+<b class="nc">&nbsp;        return false;</b>
+&nbsp;    }
+&nbsp;
+<b class="nc">&nbsp;    /////  Delete Customer Method</b>
+<b class="nc">&nbsp;    public boolean deleteCustomer(int id){</b>
+<b class="nc">&nbsp;        for(Customer existCustomer : findByNameCustomer){</b>
+<b class="nc">&nbsp;            if(existCustomer.getId() == id){</b>
+<b class="nc">&nbsp;                findByNameCustomer.removeIf(n -&gt; (n.getId() == (id)));</b>
+<b class="nc">&nbsp;                return true;</b>
+<b class="nc">&nbsp;            }</b>
+<b class="nc">&nbsp;        }</b>
+<b class="nc">&nbsp;        return false;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;    /// to Update Customer
+&nbsp;
+&nbsp;    public void updateCustomer(Customer toUpdate,int id){
+<b class="nc">&nbsp;        int neededIndex = 0;</b>
+<b class="nc">&nbsp;        for(Customer customer : findByNameCustomer) {</b>
+<b class="nc">&nbsp;            boolean temp = searchCustomer(id);</b>
+<b class="nc">&nbsp;</b>
+<b class="nc">&nbsp;            if(temp){</b>
+<b class="nc">&nbsp;                neededIndex = findByNameCustomer.indexOf(customer);</b>
+<b class="nc">&nbsp;</b>
+&nbsp;            }
+&nbsp;
+<b class="nc">&nbsp;        }</b>
+<b class="nc">&nbsp;        findByNameCustomer.set(neededIndex-1,toUpdate);</b>
+<b class="nc">&nbsp;    }</b>
+&nbsp;
+&nbsp;
+&nbsp;    // to Print Customer Data
+&nbsp;    public void getCustomerData(){
+<b class="nc">&nbsp;            for(Customer oldCustomer : findByNameCustomer){</b>
+<b class="nc">&nbsp;                logger.log(Level.INFO, &quot;id: {0} Name: {1} Phone: {2} Address: {3} Email: {4}&quot;,</b>
+<b class="nc">&nbsp;                    new Object[] {oldCustomer.getId(), oldCustomer.getName(), oldCustomer.getPhone(), oldCustomer.getAddress(), oldCustomer.getEmail()});</b>
+<b class="nc">&nbsp;</b>
+<b class="nc">&nbsp;        }</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;    // General Methods
+&nbsp;
+&nbsp;    // getNumberOfProduct
+&nbsp;
+<b class="nc">&nbsp;    public int getNumberOfProducts() {</b>
+<b class="fc">&nbsp;        int numberOfDeliveredOrders = 0;</b>
+<b class="fc">&nbsp;        for (int i = 0; i &lt; findByNameProduct.size(); i++) {</b>
+<b class="fc">&nbsp;                numberOfDeliveredOrders++;</b>
+<b class="nc">&nbsp;        }</b>
+<b class="fc">&nbsp;        return numberOfDeliveredOrders;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;    // 1) Generate Statistics
+<b class="nc">&nbsp;    public void generateStatistics(){</b>
+<b class="fc">&nbsp;        int numberOfDeliveredOrders = 0;</b>
+<b class="fc">&nbsp;        for(int i = 0 ; i &lt; findByNameProduct.size(); i++){</b>
+<b class="fc">&nbsp;            if(findByNameProduct.get(i).getProductDone())</b>
+<b class="fc">&nbsp;                numberOfDeliveredOrders++;</b>
+&nbsp;        }
+<b class="fc">&nbsp;        int totalAmountOfPaidMoney = 0;</b>
+<b class="fc">&nbsp;        for(int i = 0 ; i &lt; findByNameCustomer.size(); i++){</b>
+<b class="fc">&nbsp;            totalAmountOfPaidMoney+= findByNameCustomer.get(i).getTotalPay() ;</b>
+<b class="nc">&nbsp;        }</b>
+&nbsp;
+<b class="fc">&nbsp;        int totalAmountOfDebt = 0;</b>
+<b class="fc">&nbsp;        for(int i = 0 ; i &lt; findByNameCustomer.size(); i++){</b>
+<b class="fc">&nbsp;            totalAmountOfDebt+= findByNameCustomer.get(i).getTotalDebts() ;</b>
+<b class="nc">&nbsp;        }</b>
+<b class="nc">&nbsp;</b>
+&nbsp;
+<b class="nc">&nbsp;</b>
+<b class="fc">&nbsp;        int totalAmountOfCash = 0 ;</b>
+<b class="fc">&nbsp;        for(int i = 0 ; i &lt; findByNameCustomer.size(); i++){</b>
+<b class="fc">&nbsp;            totalAmountOfCash+= findByNameCustomer.get(i).getTotalDebts() + findByNameCustomer.get(i).getTotalPay() ;</b>
+<b class="nc">&nbsp;        }</b>
+<b class="fc">&nbsp;        logger.log(Level.INFO,&quot;The number of Delivered Orders: {0}&quot;,numberOfDeliveredOrders);</b>
+<b class="fc">&nbsp;        logger.log(Level.INFO,&quot;Total amount of Customers payment: {0}&quot;,totalAmountOfPaidMoney);</b>
+<b class="fc">&nbsp;        logger.log(Level.INFO,&quot;Total amount of Customers Debts: {0}&quot;,totalAmountOfDebt);</b>
+<b class="fc">&nbsp;        logger.log(Level.INFO,&quot;Total amount of Company Cash: {0}&quot;,totalAmountOfCash);</b>
+&nbsp;
+&nbsp;
+&nbsp;    }
+&nbsp;
+&nbsp;    // 3) Feature to Track Order
+<b class="nc">&nbsp;</b>
+<b class="nc">&nbsp;    public void trackOrder(int productId){</b>
+&nbsp;
+<b class="fc">&nbsp;        for(int i = 0 ; i &lt; findByNameProduct.size(); i++){</b>
+<b class="nc">&nbsp;</b>
+<b class="fc">&nbsp;            if(searchProduct(productId)){</b>
+<b class="fc">&nbsp;            if((findByNameProduct.get(i).getProductId() == productId )) {</b>
+<b class="nc">&nbsp;</b>
+<b class="fc">&nbsp;                if((!findByNameProduct.get(i).getProductDone())) {</b>
+<b class="fc">&nbsp;                    if (findByNameProduct.get(i).getProductStatus() == 1) {</b>
+<b class="fc">&nbsp;                        logger.log(Level.INFO,&quot;Your product is complete!!&quot;);</b>
+<b class="fc">&nbsp;                        break;</b>
+<b class="nc">&nbsp;                    } else if ((findByNameProduct.get(i).getProductStatus() == 2)) {</b>
+<b class="nc">&nbsp;                        logger.log(Level.INFO,&quot;Your product is treatment!!&quot;);</b>
+<b class="nc">&nbsp;                        break;</b>
+<b class="nc">&nbsp;                    } else if ((findByNameProduct.get(i).getProductStatus() == 3)) {</b>
+<b class="nc">&nbsp;                        logger.log(Level.INFO,&quot;Your product is waiting!!&quot;);</b>
+<b class="nc">&nbsp;                        break;</b>
+&nbsp;                    }
+<b class="nc">&nbsp;                    else {</b>
+<b class="nc">&nbsp;                        logger.log(Level.INFO,&quot;Invalid input Status&quot;);</b>
+<b class="nc">&nbsp;                        break;</b>
+&nbsp;                    }
+&nbsp;                }
+<b class="nc">&nbsp;                else {</b>
+<b class="nc">&nbsp;                    logger.log(Level.INFO,&quot;Your product was Delivered &quot;);</b>
+<b class="nc">&nbsp;                    break;</b>
+&nbsp;                }
+&nbsp;
+&nbsp;            }
+&nbsp;            }
+<b class="nc">&nbsp;            else {</b>
+<b class="nc">&nbsp;                logger.log(Level.INFO,&quot;Invalid product ID&quot;);</b>
+<b class="nc">&nbsp;                break;</b>
+&nbsp;            }
+&nbsp;
+&nbsp;
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    // feature discount
+<b class="nc">&nbsp;    public void printDiscount(int customerId){</b>
+<b class="fc">&nbsp;        for(int i = 0 ; i &lt; findByNameCustomer.size(); i++){</b>
+<b class="fc">&nbsp;            if(searchCustomer(customerId)) {</b>
+<b class="fc">&nbsp;                if (findByNameCustomer.get(i).getTotalPay() &lt; 1000)</b>
+<b class="fc">&nbsp;                    logger.log(Level.INFO,&quot;You will take : .05 discount&quot;);</b>
+<b class="nc">&nbsp;                else if (findByNameCustomer.get(i).getTotalPay() &gt; 1000 &amp;&amp; findByNameCustomer.get(i).getTotalPay() &lt;= 1500)</b>
+<b class="nc">&nbsp;                    logger.log(Level.INFO,&quot;You will take : .10 discount&quot;);</b>
+<b class="nc">&nbsp;                else if (findByNameCustomer.get(i).getTotalPay() &gt; 1500 &amp;&amp; findByNameCustomer.get(i).getTotalPay() &lt;= 2000)</b>
+<b class="nc">&nbsp;                    logger.log(Level.INFO,&quot;You will take : .15 discount&quot;);</b>
+<b class="nc">&nbsp;                else if (findByNameCustomer.get(i).getTotalPay() &gt; 2000 &amp;&amp; findByNameCustomer.get(i).getTotalPay() &lt;= 3000)</b>
+<b class="nc">&nbsp;                    logger.log(Level.INFO,&quot;You will take : .20 discount&quot;);</b>
+<b class="nc">&nbsp;                else if (findByNameCustomer.get(i).getTotalPay() &gt; 3000)</b>
+<b class="nc">&nbsp;                    logger.log(Level.INFO,&quot;You will take : .30 discount&quot;);</b>
+&nbsp;            }
+<b class="nc">&nbsp;            else</b>
+<b class="nc">&nbsp;                logger.log(Level.INFO,&quot;Customer not found&quot;);</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    // feature Generate Invoice
+&nbsp;
+<b class="nc">&nbsp;    public void generateInvoice(int prodId , int custId){</b>
+<b class="fc">&nbsp;        int flag1 = 0 ;</b>
+<b class="fc">&nbsp;        int flag2 = 0 ;</b>
+<b class="fc">&nbsp;        int pId = 0;</b>
+<b class="nc">&nbsp;</b>
+<b class="fc">&nbsp;        String address1 = &quot;&quot; ;</b>
+<b class="fc">&nbsp;        double cost = 0;</b>
+<b class="fc">&nbsp;            for (int i = 0; i &lt; findByNameProduct.size(); i++) {</b>
+<b class="nc">&nbsp;</b>
+<b class="fc">&nbsp;                if(searchProduct(prodId)){</b>
+<b class="fc">&nbsp;                    flag1 = 1;</b>
+<b class="fc">&nbsp;                    pId = prodId;</b>
+<b class="fc">&nbsp;                    cost = findByNameProduct.get(i).getCost();</b>
+&nbsp;
+&nbsp;                }
+&nbsp;                else
+<b class="nc">&nbsp;                    logger.log(Level.INFO,&quot;This product not Exist&quot;);</b>
+&nbsp;            }
+<b class="fc">&nbsp;        for (int i = 0; i &lt; findByNameCustomer.size(); i++) {</b>
+&nbsp;
+<b class="fc">&nbsp;            if(searchProduct(custId)){</b>
+<b class="fc">&nbsp;                flag2 = 1;</b>
+<b class="fc">&nbsp;                    address1 = findByNameCustomer.get(i).getAddress();</b>
+<b class="nc">&nbsp;            }</b>
+&nbsp;            else
+<b class="nc">&nbsp;                logger.log(Level.INFO,&quot;This product not Exist&quot;);</b>
+&nbsp;        }
+<b class="nc">&nbsp;</b>
+<b class="fc">&nbsp;        if(flag1 == 1 &amp;&amp; flag2 == 1)</b>
+<b class="fc">&nbsp;            logger.log(Level.INFO, &quot;product id: {0}, product cost: {1}, customer address: {2}&quot;, new Object[] {pId, cost, address1});</b>
+<b class="nc">&nbsp;</b>
+<b class="nc">&nbsp;        }</b>
+&nbsp;
+&nbsp;        // Send email feature
+&nbsp;
+&nbsp;    public void orderStatus(int productId,int customerId,String email) {
+<b class="fc">&nbsp;        String status = &quot;&quot;;</b>
+<b class="nc">&nbsp;</b>
+<b class="fc">&nbsp;        for (int i = 0; i &lt; findByNameProduct.size(); i++) {</b>
+<b class="fc">&nbsp;            if ((searchCustomer(customerId) &amp;&amp; searchProduct(productId) &amp;&amp; searchCustomerByEmail(email)) &amp;&amp; (findByNameProduct.get(i).productStatus == 1 &amp;&amp; findByNameProduct.get(i).getProductId() == productId)) {</b>
+<b class="nc">&nbsp;</b>
+<b class="fc">&nbsp;                    status = &quot;Your Order Complete&quot;;</b>
+<b class="fc">&nbsp;                    SendMail.getSendEmail(status, email);</b>
+<b class="nc">&nbsp;</b>
+&nbsp;            }
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-05-08 20:24</div>
+</div>
+</body>
+</html>

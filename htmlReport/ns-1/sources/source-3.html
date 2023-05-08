@@ -1,0 +1,171 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > Customer</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">&lt;empty package name&gt;</a>
+</div>
+
+<h1>Coverage Summary for Class: Customer (&lt;empty package name&gt;)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Customer</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    41.2%
+  </span>
+  <span class="absValue">
+    (7/17)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    58.3%
+  </span>
+  <span class="absValue">
+    (14/24)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;public class Customer {
+&nbsp;    private int id ;
+&nbsp;    private String name ;
+&nbsp;    private String phone ;
+&nbsp;    private String address ;
+&nbsp;    private String email;
+&nbsp;    private double totalPay ;
+&nbsp;    private double totalDebts;
+&nbsp;
+<b class="nc">&nbsp;    public Customer(){}</b>
+<b class="fc">&nbsp;    public Customer(int id , String name , String phone , String address , String email , double totalPay , double totalDebts){</b>
+<b class="fc">&nbsp;        this.id = id;</b>
+<b class="fc">&nbsp;        this.name = name;</b>
+<b class="fc">&nbsp;        this.phone = phone;</b>
+<b class="fc">&nbsp;        this.address = address;</b>
+<b class="fc">&nbsp;        this.email = email;</b>
+<b class="fc">&nbsp;        this.totalPay = totalPay;</b>
+<b class="fc">&nbsp;        this.totalDebts = totalDebts;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;    // setters and getters Functions
+&nbsp;    ////////////////////////////////////////////////////////////////
+&nbsp;
+&nbsp;    public void setTotalDebts(double totalDebts) {
+<b class="nc">&nbsp;        this.totalDebts = totalDebts;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public double getTotalDebts() {
+<b class="fc">&nbsp;        return totalDebts;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setId(int id){
+<b class="nc">&nbsp;        this.id = id;</b>
+&nbsp;    }
+&nbsp;    public void setName(String name) {
+<b class="nc">&nbsp;        this.name = name;</b>
+&nbsp;    }
+&nbsp;    public void setAddress(String address) {
+<b class="nc">&nbsp;        this.address = address;</b>
+&nbsp;    }
+&nbsp;    public void setPhone(String phone) {
+<b class="nc">&nbsp;        this.phone = phone;</b>
+&nbsp;    }
+<b class="nc">&nbsp;    public void setEmail(String email){this.email = email;}</b>
+<b class="nc">&nbsp;    public void setTotalPay(double totalPay){this.totalPay = totalPay;}</b>
+&nbsp;    public int getId() {
+<b class="fc">&nbsp;        return id;</b>
+&nbsp;    }
+&nbsp;    public String getName() {
+<b class="nc">&nbsp;        return name;</b>
+&nbsp;    }
+&nbsp;    public String getAddress() {
+<b class="fc">&nbsp;        return address;</b>
+&nbsp;    }
+&nbsp;    public String getPhone() {
+<b class="fc">&nbsp;        return phone;</b>
+&nbsp;    }
+<b class="fc">&nbsp;    public String getEmail(){return email;}</b>
+<b class="fc">&nbsp;    public double getTotalPay(){return totalPay;}</b>
+&nbsp;    ///////////////////////////////////////////////////////////////
+&nbsp;
+&nbsp;    // method to add new Customer
+&nbsp;    public Customer addCustomer(){
+<b class="nc">&nbsp;        return new Customer(id,name,phone,address,email,totalPay,totalDebts) ;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-05-08 20:24</div>
+</div>
+</body>
+</html>

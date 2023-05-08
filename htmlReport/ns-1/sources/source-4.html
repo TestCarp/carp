@@ -1,0 +1,210 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > SendMail</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">&lt;empty package name&gt;</a>
+</div>
+
+<h1>Coverage Summary for Class: SendMail (&lt;empty package name&gt;)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">SendMail</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    90.9%
+  </span>
+  <span class="absValue">
+    (20/22)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">SendMail$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    91.7%
+  </span>
+  <span class="absValue">
+    (22/24)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;import javax.mail.*;
+&nbsp;import javax.mail.internet.InternetAddress;
+&nbsp;import javax.mail.internet.MimeMessage;
+&nbsp;import java.util.Properties;
+&nbsp;import java.util.logging.Level;
+&nbsp;import java.util.logging.Logger;
+&nbsp;
+&nbsp;public class SendMail {
+&nbsp;    private SendMail(){}
+&nbsp;    public static void getSendEmail(String toUserMessage,String email){
+<b class="fc">&nbsp;        Logger logger = Logger.getLogger(SendMail.class.getName());</b>
+&nbsp;        // Recipient&#39;s email ID needs to be mentioned.
+<b class="fc">&nbsp;        String to = email;</b>
+&nbsp;
+&nbsp;        // Sender&#39;s email ID needs to be mentioned
+<b class="fc">&nbsp;        String from = &quot;groupgroup060@gmail.com&quot;;</b>
+&nbsp;
+&nbsp;        // Assuming you are sending email from through gmails smtp
+<b class="fc">&nbsp;        String host = &quot;smtp.gmail.com&quot;;</b>
+&nbsp;
+&nbsp;        // Get system properties
+<b class="fc">&nbsp;        Properties properties = System.getProperties();</b>
+&nbsp;
+&nbsp;        // Setup mail server
+<b class="fc">&nbsp;        properties.put(&quot;mail.smtp.host&quot;,host);</b>
+&nbsp;
+<b class="fc">&nbsp;        properties.put(&quot;mail.smtp.port&quot;,&quot;465&quot;);</b>
+&nbsp;
+<b class="fc">&nbsp;        properties.put(&quot;mail.smtp.ssl.enable&quot;,&quot;true&quot;);</b>
+&nbsp;
+<b class="fc">&nbsp;        properties.put(&quot;mail.smtp.auth&quot;,&quot;true&quot;);</b>
+&nbsp;
+&nbsp;        // Get the Session object.// and pass username and password
+<b class="fc">&nbsp;        Session session = Session.getInstance(properties, new javax.mail.Authenticator() {</b>
+&nbsp;
+&nbsp;            @Override
+&nbsp;            protected PasswordAuthentication getPasswordAuthentication() {
+&nbsp;
+<b class="fc">&nbsp;                return new PasswordAuthentication(&quot;groupgroup060@gmail.com&quot;, &quot;nseewneyladintsu&quot;);</b>
+&nbsp;
+&nbsp;            }
+&nbsp;
+&nbsp;        });
+&nbsp;
+&nbsp;        // Used to debug SMTP issues
+<b class="fc">&nbsp;        session.setDebug(true);</b>
+&nbsp;
+&nbsp;        try
+&nbsp;
+&nbsp;        {
+&nbsp;            // Create a default MimeMessage object.
+<b class="fc">&nbsp;            MimeMessage message = new MimeMessage(session);</b>
+&nbsp;
+&nbsp;            // Set From: header field of the header.
+<b class="fc">&nbsp;            message.setFrom(new InternetAddress(from));</b>
+&nbsp;
+&nbsp;
+&nbsp;            // Set To: header field of the header.
+<b class="fc">&nbsp;            message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));</b>
+&nbsp;
+&nbsp;            // Set Subject: header field
+<b class="fc">&nbsp;            message.setSubject(&quot;Your Order Status!!&quot;);</b>
+&nbsp;
+&nbsp;            // Now set the actual message
+<b class="fc">&nbsp;            message.setText(&quot;Your Order Status is : \n &quot;+toUserMessage);</b>
+&nbsp;
+&nbsp;
+<b class="fc">&nbsp;            logger.log (Level.INFO,&quot;sending...&quot;);</b>
+&nbsp;            // Send message
+<b class="fc">&nbsp;            Transport.send(message);</b>
+<b class="fc">&nbsp;            logger.log(Level.INFO,&quot;Sent message successfully....&quot;);</b>
+<b class="nc">&nbsp;        } catch(MessagingException mex)</b>
+&nbsp;
+&nbsp;        {
+<b class="nc">&nbsp;            mex.printStackTrace();</b>
+<b class="fc">&nbsp;        }</b>
+&nbsp;
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-05-08 20:24</div>
+</div>
+</body>
+</html>
