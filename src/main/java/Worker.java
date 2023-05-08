@@ -169,7 +169,7 @@ public class Worker {
 
     // to Print Customer Data
     public void getCustomerData(){
-        for(Customer oldCustomer : findByNameCustomer){
+            for(Customer oldCustomer : findByNameCustomer){
             logger.log(Level.INFO, "id: {0} Name: {1} Phone: {2} Address: {3} Email: {4}",
                     new Object[] {oldCustomer.getId(), oldCustomer.getName(), oldCustomer.getPhone(), oldCustomer.getAddress(), oldCustomer.getEmail()});
 
