@@ -111,8 +111,6 @@ public class TestTrackOrder {
 
         int actualResult = 0 ;
         for(int i = 0 ; i < w1.findByNameProduct.size(); i++){
-            System.out.println(w1.findByNameProduct.get(i).getProductStatus());
-            System.out.println(w1.findByNameProduct.get(i).getProductId());
             if((w1.findByNameProduct.get(i).getProductStatus() == 1) && (w1.findByNameProduct.get(i).getProductId() == 3)){
                 // actualResult = 1 ---> in complete
                 actualResult = 1;

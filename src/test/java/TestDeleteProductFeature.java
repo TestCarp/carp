@@ -1,5 +1,6 @@
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
@@ -9,20 +10,22 @@ public class TestDeleteProductFeature {
     Worker w = new Worker();
 
 
+
     @Test
-    @When("invalid {int}")
-    public void invalid(Integer int1) {
+    @When("invalid id")
+    public void invalid_id() {
         // Write code here that turns the phrase above into concrete actions
         // throw new io.cucumber.java.PendingException();
 
     }
 
-    @Then("Delete operation {int} {string}")
-    public void delete_operation(Integer actualId, String string) {
+
+    @Then("Delete operation id result")
+    public void delete_operation_id_result() {
         // Write code here that turns the phrase above into concrete actions
         // throw new io.cucumber.java.PendingException();
         w.addProduct(p);
-        actualId = 3;
+        int actualId = 3;
 
         boolean actualResult = w.deleteProduct(actualId);
         boolean expectId = true;
@@ -32,22 +35,23 @@ public class TestDeleteProductFeature {
 
     }
 
-    @Test
 
-    @When("worker entered invalid {int} to delete")
-    public void worker_entered_invalid_to_delete(Integer int1) {
+    @Test
+    @When("worker entered invalid productId to delete")
+    public void worker_entered_invalid_product_id_to_delete() {
         // Write code here that turns the phrase above into concrete actions
         // throw new io.cucumber.java.PendingException();
 
     }
 
-    @Then("Delete operation result {int} {string}")
-    public void delete_operation_result(Integer actualId, String string) {
+
+    @Then("Delete operation result productId result")
+    public void delete_operation_result_product_id_result() {
         // Write code here that turns the phrase above into concrete actions
         // throw new io.cucumber.java.PendingException();
 
         w.addProduct(p);
-        actualId = 1;
+        int actualId = 1;
 
         boolean actualResult = w.deleteProduct(actualId);
         boolean expectId = true;

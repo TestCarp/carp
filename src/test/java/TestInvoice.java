@@ -33,7 +33,6 @@ public class TestInvoice {
                 for(int i = 0 ; i < w.findByNameCustomer.size(); i++){
                     actualResult2 = w.findByNameCustomer.get(i).getAddress() ;
                 }
-                System.out.println(actualResult2);
 
                 // assertTrue(actualResult == expectedResult);
 
@@ -43,7 +42,6 @@ public class TestInvoice {
                 for(int i = 0 ; i < w.findByNameProduct.size(); i++){
                     actualResult3 = w.findByNameProduct.get(i).getProductId() ;
                 }
-                System.out.println(actualResult3);
 
                 assertTrue(actualResult1 == expectedResult1 && actualResult2==expectedResult2 && actualResult3==expectedResult3);
 

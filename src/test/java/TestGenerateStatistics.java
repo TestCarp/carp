@@ -68,7 +68,6 @@ public class TestGenerateStatistics {
         for(int i = 0 ; i < w.findByNameCustomer.size(); i++){
             actualResult+=w.findByNameCustomer.get(i).getTotalDebts() + w.findByNameCustomer.get(i).getTotalPay() ;
         }
-        System.out.println(actualResult);
 
         assertTrue(actualResult == expectedResult);
     }
@@ -93,7 +92,6 @@ public class TestGenerateStatistics {
         for(int i = 0 ; i < w.findByNameCustomer.size(); i++){
             actualResult+= w.findByNameCustomer.get(i).getTotalPay() ;
         }
-        System.out.println(actualResult);
 
         assertTrue(actualResult == expectedResult);
     }
@@ -118,7 +116,6 @@ public class TestGenerateStatistics {
         for(int i = 0 ; i < w.findByNameCustomer.size(); i++){
             actualResult+=w.findByNameCustomer.get(i).getTotalDebts()  ;
         }
-        System.out.println(actualResult);
 
         assertTrue(actualResult == expectedResult);
     }

@@ -1,6 +1,7 @@
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
@@ -11,27 +12,31 @@ public class TestRequired {
 
 
 
+
     @Test
-    @Given("{string} and {string}")
-    public void and(String name, String result) {
+    @Given("typeOfProduct and result")
+    public void type_of_product_and_result() {
         // Write code here that turns the phrase above into concrete actions
         // throw new io.cucumber.java.PendingException();
-    }
-    @When("{string} is required special treatment")
-    public void is_required_special_treatment(String name) {
     }
 
-    @Then("{string} , {string} need special treatment")
-    public void need_special_treatment(String result , String Category) {
+
+    @When("typeOfProduct is required special treatment")
+    public void type_of_product_is_required_special_treatment() {
+
+    }
+
+
+    @Then("result , typeOfProduct need special treatment")
+    public void result_type_of_product_need_special_treatment() {
         // Write code here that turns the phrase above into concrete actions
         // throw new io.cucumber.java.PendingException();
-        Category = "Expensive";
-        result = "true";
+        String Category = "Expensive";
+        String result = "true";
         p.setCategory(Category);
         p.setRequiredSpecialTreatment(Boolean.parseBoolean(result));
         String expectedName = p.getCategory();
         boolean expectedResult = p.isRequiredSpecialTreatment();
-        System.out.println(expectedResult + "     " + expectedName);
         String actualName = "Expensive";
         boolean actualResult = true ;
 

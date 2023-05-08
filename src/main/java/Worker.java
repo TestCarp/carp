@@ -7,9 +7,11 @@ public class Worker {
     private int id ;
 
 
-    private String name , phone , address ;
-    public List<product> findByNameProduct = new ArrayList<>();
-    public List<Customer> findByNameCustomer = new ArrayList<>();
+    private String name ;
+    private String phone ;
+    private String address ;
+    protected List<product> findByNameProduct = new ArrayList<>();
+    protected List<Customer> findByNameCustomer = new ArrayList<>();
 
     Logger logger = Logger.getLogger(Worker.class.getName());
     public Worker(int id , String name , String address , String phone){
@@ -49,11 +51,11 @@ public class Worker {
     public boolean addProduct(product newProduct){
         for(product oldProduct : findByNameProduct){
             if(oldProduct.getProductId()==(newProduct.getProductId())){
-                System.out.println("product is Exist");
+
                 return true;
             }
         }
-        System.out.println("Product will added to list");
+
         findByNameProduct.add(newProduct);
         return false;
     }
@@ -84,9 +86,9 @@ public class Worker {
         int neededIndex = 0;
         for(product product : findByNameProduct) {
             boolean temp = searchProduct(id);
-            System.out.println(temp);
+
+            logger.log(Level.INFO,"{0}",temp);
             if(temp){
-                neededIndex = findByNameProduct.indexOf(product);
                 logger.log(Level.INFO,"{0}",findByNameProduct.indexOf(product));
                 return  true;
             }
@@ -170,7 +172,7 @@ public class Worker {
     // to Print Customer Data
     public void getCustomerData(){
             for(Customer oldCustomer : findByNameCustomer){
-            logger.log(Level.INFO, "id: {0} Name: {1} Phone: {2} Address: {3} Email: {4}",
+                logger.log(Level.INFO, "id: {0} Name: {1} Phone: {2} Address: {3} Email: {4}",
                     new Object[] {oldCustomer.getId(), oldCustomer.getName(), oldCustomer.getPhone(), oldCustomer.getAddress(), oldCustomer.getEmail()});
 
         }
@@ -232,7 +234,7 @@ public class Worker {
             if(searchProduct(productId)){
             if((findByNameProduct.get(i).getProductId() == productId )) {
 
-                if((findByNameProduct.get(i).getProductDone() == false)) {
+                if((!findByNameProduct.get(i).getProductDone())) {
                     if (findByNameProduct.get(i).getProductStatus() == 1) {
                         logger.log(Level.INFO,"Your product is complete!!");
                         break;
