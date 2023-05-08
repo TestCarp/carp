@@ -48,17 +48,12 @@ public class product {
         return dimenssion;
     }
 
-    public void setDimenssion(String dimenssion) {
-        this.dimenssion = dimenssion;
-    }
 
     public int getProductId() {
         return productId;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
-    }
+
 
     public String getCategory() {
         return category;
@@ -72,19 +67,12 @@ public class product {
         return picture;
     }
 
-    public void setPicture(String picture) {
-        this.picture = picture;
-    }
-    public void setCost(double cost) {
-        this.cost = cost;
-    }
+
     public double getCost(){
         return  cost;
     }
-//////////////////////////
-    public product addProduct(){
-        return new product(productId,category,picture , dimenssion ,cost,productDone,productStatus);
-    }
+
+
 
 
 }

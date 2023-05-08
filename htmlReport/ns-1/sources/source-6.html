@@ -59,10 +59,10 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    74.1%
+    82.5%
   </span>
   <span class="absValue">
-    (20/27)
+    (33/40)
   </span>
 </td>
 </tr>
@@ -77,13 +77,15 @@ Current scope:     <a href="../../index.html">all classes</a>
 <code class="sourceCode" id="sourceCode">&nbsp;public class product {
 &nbsp;
 &nbsp;    private int productId;
-&nbsp;    private String dimenssion , category , picture ;
-&nbsp;    private boolean isRequiredSpecialTreatment , isComplete;
-&nbsp;    public boolean  productDone;
-&nbsp;    public int productStatus;
+&nbsp;    private String dimenssion ;
+&nbsp;    private String category ;
+&nbsp;    private String picture ;
+&nbsp;    private boolean isRequiredSpecialTreatment ;
+&nbsp;    protected boolean  productDone;
+&nbsp;    protected int productStatus;
 &nbsp;    private double cost ;
-&nbsp;
-&nbsp;    ////////////////////////////////
+<b class="fc">&nbsp;</b>
+<b class="fc">&nbsp;    ////////////////////////////////</b>
 <b class="fc">&nbsp;    public product(){}</b>
 <b class="fc">&nbsp;    public product(int productId,String category, String picture , String dimenssion , double cost , boolean productDone,int productStatus){</b>
 <b class="fc">&nbsp;        this.productId = productId;</b>
@@ -93,13 +95,13 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;        this.cost = cost;</b>
 <b class="fc">&nbsp;        this.productDone = productDone;</b>
 <b class="fc">&nbsp;        this.productStatus = productStatus;</b>
-&nbsp;    }
+<b class="fc">&nbsp;    }</b>
 &nbsp;    public int getProductStatus(){
 <b class="fc">&nbsp;        return productStatus;</b>
-&nbsp;    }
+<b class="fc">&nbsp;    }</b>
 &nbsp;    public void setProductDone(boolean productDone){
 <b class="fc">&nbsp;        this.productDone = productDone;</b>
-&nbsp;    }
+<b class="fc">&nbsp;    }</b>
 &nbsp;    public boolean getProductDone(){
 <b class="fc">&nbsp;        return productDone;</b>
 &nbsp;    }
@@ -109,58 +111,46 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;
 &nbsp;    /////////////////////////////////
 &nbsp;
-&nbsp;
+<b class="fc">&nbsp;</b>
 &nbsp;    public boolean isRequiredSpecialTreatment() {
 <b class="fc">&nbsp;        return isRequiredSpecialTreatment;</b>
 &nbsp;    }
-&nbsp;
+<b class="fc">&nbsp;</b>
 &nbsp;    public void setRequiredSpecialTreatment(boolean requiredSpecialTreatment) {
 <b class="fc">&nbsp;        isRequiredSpecialTreatment = requiredSpecialTreatment;</b>
 &nbsp;    }
-&nbsp;
+<b class="fc">&nbsp;</b>
 &nbsp;    public String getDimenssion() {
 <b class="fc">&nbsp;        return dimenssion;</b>
 &nbsp;    }
-&nbsp;
-&nbsp;    public void setDimenssion(String dimenssion) {
-<b class="nc">&nbsp;        this.dimenssion = dimenssion;</b>
-&nbsp;    }
+<b class="nc">&nbsp;</b>
 &nbsp;
 &nbsp;    public int getProductId() {
 <b class="fc">&nbsp;        return productId;</b>
-&nbsp;    }
+<b class="fc">&nbsp;    }</b>
 &nbsp;
-&nbsp;    public void setProductId(int productId) {
-<b class="nc">&nbsp;        this.productId = productId;</b>
-&nbsp;    }
 &nbsp;
-&nbsp;    public String getCategory() {
+&nbsp;
+<b class="nc">&nbsp;    public String getCategory() {</b>
 <b class="fc">&nbsp;        return category;</b>
 &nbsp;    }
 &nbsp;
-&nbsp;    public void setCategory(String category) {
+<b class="fc">&nbsp;    public void setCategory(String category) {</b>
 <b class="fc">&nbsp;        this.category = category;</b>
 &nbsp;    }
 &nbsp;
-&nbsp;    public String getPicture() {
+<b class="fc">&nbsp;    public String getPicture() {</b>
 <b class="fc">&nbsp;        return picture;</b>
 &nbsp;    }
 &nbsp;
-&nbsp;    public void setPicture(String picture) {
-<b class="nc">&nbsp;        this.picture = picture;</b>
-&nbsp;    }
-&nbsp;    public void setCost(double cost) {
-<b class="nc">&nbsp;        this.cost = cost;</b>
-&nbsp;    }
+<b class="fc">&nbsp;</b>
 &nbsp;    public double getCost(){
 <b class="fc">&nbsp;        return  cost;</b>
 &nbsp;    }
-&nbsp;//////////////////////////
-&nbsp;    public product addProduct(){
-<b class="nc">&nbsp;        return new product(productId,category,picture , dimenssion ,cost,productDone,productStatus);</b>
-&nbsp;    }
+<b class="nc">&nbsp;</b>
 &nbsp;
 &nbsp;
+<b class="nc">&nbsp;</b>
 &nbsp;}
 </code>
 </pre>
@@ -185,7 +175,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2023-05-08 20:48</div>
+    <div style="float:right;">generated on 2023-05-08 22:46</div>
 </div>
 </body>
 </html>

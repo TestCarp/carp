@@ -128,8 +128,6 @@ public class Worker {
         return false;
     }
 
-    // Search about Customer using (email)
-
     public boolean searchCustomerByEmail(String email){
         for(Customer existCustomer : findByNameCustomer){
             if(existCustomer.getEmail().equals(email)){
@@ -139,7 +137,6 @@ public class Worker {
         return false;
     }
 
-    /////  Delete Customer Method
     public boolean deleteCustomer(int id){
         for(Customer existCustomer : findByNameCustomer){
             if(existCustomer.getId() == id){
@@ -168,8 +165,6 @@ public class Worker {
         findByNameCustomer.set(neededIndex-1,toUpdate);
     }
 
-
-    // to Print Customer Data
     public void getCustomerData(){
             for(Customer oldCustomer : findByNameCustomer){
                 logger.log(Level.INFO, "id: {0} Name: {1} Phone: {2} Address: {3} Email: {4}",
@@ -197,32 +192,22 @@ public class Worker {
     // 1) Generate Statistics
     public void generateStatistics(){
         int numberOfDeliveredOrders = 0;
-        for(int i = 0 ; i < findByNameProduct.size(); i++){
+        for(int i = 0 ; i < findByNameProduct.size(); i++)
             if(findByNameProduct.get(i).getProductDone())
                 numberOfDeliveredOrders++;
-        }
         int totalAmountOfPaidMoney = 0;
-        for(int i = 0 ; i < findByNameCustomer.size(); i++){
+        for(int i = 0 ; i < findByNameCustomer.size(); i++)
             totalAmountOfPaidMoney+= findByNameCustomer.get(i).getTotalPay() ;
-        }
-
         int totalAmountOfDebt = 0;
-        for(int i = 0 ; i < findByNameCustomer.size(); i++){
+        for(int i = 0 ; i < findByNameCustomer.size(); i++)
             totalAmountOfDebt+= findByNameCustomer.get(i).getTotalDebts() ;
-        }
-
-
-
         int totalAmountOfCash = 0 ;
-        for(int i = 0 ; i < findByNameCustomer.size(); i++){
+        for(int i = 0 ; i < findByNameCustomer.size(); i++)
             totalAmountOfCash+= findByNameCustomer.get(i).getTotalDebts() + findByNameCustomer.get(i).getTotalPay() ;
-        }
         logger.log(Level.INFO,"The number of Delivered Orders: {0}",numberOfDeliveredOrders);
         logger.log(Level.INFO,"Total amount of Customers payment: {0}",totalAmountOfPaidMoney);
         logger.log(Level.INFO,"Total amount of Customers Debts: {0}",totalAmountOfDebt);
         logger.log(Level.INFO,"Total amount of Company Cash: {0}",totalAmountOfCash);
-
-
     }
 
     // 3) Feature to Track Order
@@ -303,8 +288,6 @@ public class Worker {
                     cost = findByNameProduct.get(i).getCost();
 
                 }
-                else
-                    logger.log(Level.INFO,"This product not Exist");
             }
         for (int i = 0; i < findByNameCustomer.size(); i++) {
 
@@ -312,8 +295,6 @@ public class Worker {
                 flag2 = 1;
                     address1 = findByNameCustomer.get(i).getAddress();
             }
-            else
-                logger.log(Level.INFO,"This product not Exist");
         }
 
         if(flag1 == 1 && flag2 == 1)
