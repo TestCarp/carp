@@ -1,13 +1,17 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Worker {
     private int id ;
+
+
     private String name , phone , address ;
     public List<product> findByNameProduct = new ArrayList<>();
     public List<Customer> findByNameCustomer = new ArrayList<>();
 
-
+    Logger logger = Logger.getLogger(Worker.class.getName());
     public Worker(int id , String name , String address , String phone){
         this.id = id ;
         this.name = name;
@@ -83,7 +87,7 @@ public class Worker {
             System.out.println(temp);
             if(temp){
                 neededIndex = findByNameProduct.indexOf(product);
-                System.out.println(findByNameProduct.indexOf(product));
+                logger.log(Level.INFO,"{0}",findByNameProduct.indexOf(product));
                 return  true;
             }
 
@@ -103,11 +107,9 @@ public class Worker {
     public boolean addCustomer(Customer newCustomer){
         for(Customer oldCustomer : findByNameCustomer){
             if(oldCustomer.getId() == newCustomer.getId() || oldCustomer.getEmail() .equals(newCustomer.getEmail()) || oldCustomer.getPhone() .equals(newCustomer.getPhone())){
-                System.out.println("Customer already Exist");
                 return true;
             }
         }
-        System.out.println("Customer will be added to list");
         findByNameCustomer.add(newCustomer);
         return false;
     }
@@ -129,11 +131,9 @@ public class Worker {
     public boolean searchCustomerByEmail(String email){
         for(Customer existCustomer : findByNameCustomer){
             if(existCustomer.getEmail().equals(email)){
-                System.out.println("Exist");
                 return true;
             }
         }
-        System.out.println("Not Exist");
         return false;
     }
 
@@ -141,12 +141,10 @@ public class Worker {
     public boolean deleteCustomer(int id){
         for(Customer existCustomer : findByNameCustomer){
             if(existCustomer.getId() == id){
-                System.out.println("Exist");
                 findByNameCustomer.removeIf(n -> (n.getId() == (id)));
                 return true;
             }
         }
-        System.out.println("Not Exist");
         return false;
     }
 
@@ -158,10 +156,9 @@ public class Worker {
         int neededIndex = 0;
         for(Customer customer : findByNameCustomer) {
             boolean temp = searchCustomer(id);
-            System.out.println(temp);
+
             if(temp){
                 neededIndex = findByNameCustomer.indexOf(customer);
-                System.out.println(findByNameCustomer.indexOf(customer));
 
             }
 
@@ -173,7 +170,9 @@ public class Worker {
     // to Print Customer Data
     public void getCustomerData(){
         for(Customer oldCustomer : findByNameCustomer){
-            System.out.println("Id: "+oldCustomer.getId()+" Name: "+oldCustomer.getName() + " Phone: "+oldCustomer.getPhone()+" Address: "+oldCustomer.getAddress()+" Email: "+oldCustomer.getEmail());
+            logger.log(Level.INFO, "id: {0} Name: {1} Phone: {2} Address: {3} Email: {4}",
+                    new Object[] {oldCustomer.getId(), oldCustomer.getName(), oldCustomer.getPhone(), oldCustomer.getAddress(), oldCustomer.getEmail()});
+
         }
     }
 
@@ -197,28 +196,29 @@ public class Worker {
     public void generateStatistics(){
         int numberOfDeliveredOrders = 0;
         for(int i = 0 ; i < findByNameProduct.size(); i++){
-            if(findByNameProduct.get(i).getProductDone() == true )
+            if(findByNameProduct.get(i).getProductDone())
                 numberOfDeliveredOrders++;
-            System.out.println("The number of Delivered Orders: "+numberOfDeliveredOrders);
-
         }
         int totalAmountOfPaidMoney = 0;
         for(int i = 0 ; i < findByNameCustomer.size(); i++){
             totalAmountOfPaidMoney+= findByNameCustomer.get(i).getTotalPay() ;
         }
-        System.out.println("Total amount of Customers payment: "+totalAmountOfPaidMoney);
 
         int totalAmountOfDebt = 0;
         for(int i = 0 ; i < findByNameCustomer.size(); i++){
             totalAmountOfDebt+= findByNameCustomer.get(i).getTotalDebts() ;
         }
-        System.out.println("Total amount of Customers Debts: "+totalAmountOfDebt);
+
+
 
         int totalAmountOfCash = 0 ;
         for(int i = 0 ; i < findByNameCustomer.size(); i++){
             totalAmountOfCash+= findByNameCustomer.get(i).getTotalDebts() + findByNameCustomer.get(i).getTotalPay() ;
         }
-        System.out.println("Total amount of Company Cash: "+totalAmountOfCash);
+        logger.log(Level.INFO,"The number of Delivered Orders: {0}",numberOfDeliveredOrders);
+        logger.log(Level.INFO,"Total amount of Customers payment: {0}",totalAmountOfPaidMoney);
+        logger.log(Level.INFO,"Total amount of Customers Debts: {0}",totalAmountOfDebt);
+        logger.log(Level.INFO,"Total amount of Company Cash: {0}",totalAmountOfCash);
 
 
     }
@@ -226,38 +226,37 @@ public class Worker {
     // 3) Feature to Track Order
 
     public void trackOrder(int productId){
-        int actualResult = 0 ;
+
         for(int i = 0 ; i < findByNameProduct.size(); i++){
 
             if(searchProduct(productId)){
             if((findByNameProduct.get(i).getProductId() == productId )) {
-                System.out.println(findByNameProduct.get(i).getProductId());
-                System.out.println(findByNameProduct.get(i).getProductStatus());
+
                 if((findByNameProduct.get(i).getProductDone() == false)) {
                     if (findByNameProduct.get(i).getProductStatus() == 1) {
-                        System.out.println("Your product is complete!!");
+                        logger.log(Level.INFO,"Your product is complete!!");
                         break;
                     } else if ((findByNameProduct.get(i).getProductStatus() == 2)) {
-                        System.out.println("Your product is treatment!!");
+                        logger.log(Level.INFO,"Your product is treatment!!");
                         break;
                     } else if ((findByNameProduct.get(i).getProductStatus() == 3)) {
-                        System.out.println("Your product is waiting!!");
+                        logger.log(Level.INFO,"Your product is waiting!!");
                         break;
                     }
                     else {
-                        System.out.println("Invalid input Status");
+                        logger.log(Level.INFO,"Invalid input Status");
                         break;
                     }
                 }
                 else {
-                    System.out.println("Your product was Delivered ");
+                    logger.log(Level.INFO,"Your product was Delivered ");
                     break;
                 }
 
             }
             }
             else {
-                System.out.println("Invalid product ID");
+                logger.log(Level.INFO,"Invalid product ID");
                 break;
             }
 
@@ -270,18 +269,18 @@ public class Worker {
         for(int i = 0 ; i < findByNameCustomer.size(); i++){
             if(searchCustomer(customerId)) {
                 if (findByNameCustomer.get(i).getTotalPay() < 1000)
-                    System.out.println("You will take : "+ .05 +" discount");
+                    logger.log(Level.INFO,"You will take : .05 discount");
                 else if (findByNameCustomer.get(i).getTotalPay() > 1000 && findByNameCustomer.get(i).getTotalPay() <= 1500)
-                    System.out.println("You will take : "+ .10 +" discount");
+                    logger.log(Level.INFO,"You will take : .10 discount");
                 else if (findByNameCustomer.get(i).getTotalPay() > 1500 && findByNameCustomer.get(i).getTotalPay() <= 2000)
-                    System.out.println("You will take : "+ .15 +" discount");
+                    logger.log(Level.INFO,"You will take : .15 discount");
                 else if (findByNameCustomer.get(i).getTotalPay() > 2000 && findByNameCustomer.get(i).getTotalPay() <= 3000)
-                    System.out.println("You will take : "+ .20 +" discount");
+                    logger.log(Level.INFO,"You will take : .20 discount");
                 else if (findByNameCustomer.get(i).getTotalPay() > 3000)
-                    System.out.println("You will take : "+ .30 +" discount");
+                    logger.log(Level.INFO,"You will take : .30 discount");
             }
             else
-                System.out.println("Customer not found");
+                logger.log(Level.INFO,"Customer not found");
         }
     }
 
@@ -290,9 +289,9 @@ public class Worker {
     public void generateInvoice(int prodId , int custId){
         int flag1 = 0 ;
         int flag2 = 0 ;
-        int cId = 0 , pId = 0;
-        System.out.println(pId+"-------------");
-        String address = "" ;
+        int pId = 0;
+
+        String address1 = "" ;
         double cost = 0;
             for (int i = 0; i < findByNameProduct.size(); i++) {
 
@@ -300,26 +299,24 @@ public class Worker {
                     flag1 = 1;
                     pId = prodId;
                     cost = findByNameProduct.get(i).getCost();
-                    System.out.println(pId);
-                 //   System.out.println("product id : "+findByNameProduct.get(i).getProductId() + "product cost : "+findByNameProduct.get(i).getCost());
+
                 }
                 else
-                    System.out.println("This product not Exist");
+                    logger.log(Level.INFO,"This product not Exist");
             }
         for (int i = 0; i < findByNameCustomer.size(); i++) {
 
-            if(searchProduct(prodId)){
+            if(searchProduct(custId)){
                 flag2 = 1;
-                    cId = findByNameCustomer.get(i).getId();
-                    address = findByNameCustomer.get(i).getAddress();
-                // System.out.println("Customer id : "+findByNameCustomer.get(i).getId() + "Customer Address : "+findByNameCustomer.get(i).getAddress());
+                    address1 = findByNameCustomer.get(i).getAddress();
             }
             else
-                System.out.println("This product not Exist");
+                logger.log(Level.INFO,"This product not Exist");
         }
 
         if(flag1 == 1 && flag2 == 1)
-            System.out.println("product id : "+ pId + " product cost : "+cost+" customer address : "+address);
+            logger.log(Level.INFO, "product id: {0}, product cost: {1}, customer address: {2}", new Object[] {pId, cost, address1});
+
         }
 
         // Send email feature
@@ -328,11 +325,11 @@ public class Worker {
         String status = "";
 
         for (int i = 0; i < findByNameProduct.size(); i++) {
-            if (searchCustomer(customerId) && searchProduct(productId) && searchCustomerByEmail(email)) {
-                if(findByNameProduct.get(i).productStatus == 1 && findByNameProduct.get(i).getProductId() == productId){
+            if ((searchCustomer(customerId) && searchProduct(productId) && searchCustomerByEmail(email)) && (findByNameProduct.get(i).productStatus == 1 && findByNameProduct.get(i).getProductId() == productId)) {
+
                     status = "Your Order Complete";
                     SendMail.getSendEmail(status, email);
-                }
+
             }
         }
     }
