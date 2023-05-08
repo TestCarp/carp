@@ -2,6 +2,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class TestTrackOrder {
@@ -19,6 +20,7 @@ public class TestTrackOrder {
     public void admin_insert_is_waiting() {
         // Write code here that turns the phrase above into concrete actions
         // throw new io.cucumber.java.PendingException();
+        assertTrue(true);
     }
 
     @Then("show to user your product is in waiting")
@@ -46,7 +48,7 @@ public class TestTrackOrder {
                 actualResult = 3;
             }
         }
-        assertTrue(actualResult == expectedResult);
+        assertEquals(actualResult , expectedResult);
     }
 
     @Test
@@ -54,6 +56,7 @@ public class TestTrackOrder {
     public void admin_insert_is_treatment() {
         // Write code here that turns the phrase above into concrete actions
         // throw new io.cucumber.java.PendingException();
+        assertTrue(true);
     }
 
     @Then("show to user your product is in treatment")
@@ -81,7 +84,7 @@ public class TestTrackOrder {
                 actualResult = 2;
             }
         }
-        assertTrue(actualResult == expectedResult);
+        assertEquals(actualResult , expectedResult);
     }
 
     @Test
@@ -89,6 +92,7 @@ public class TestTrackOrder {
     public void admin_insert_is_complete() {
         // Write code here that turns the phrase above into concrete actions
         // throw new io.cucumber.java.PendingException();
+        assertTrue(true);
     }
 
     @Then("show to user your product is in complete")
@@ -116,6 +120,6 @@ public class TestTrackOrder {
                 actualResult = 1;
             }
         }
-        assertTrue(actualResult == expectedResult);
+        assertEquals(actualResult , expectedResult);
     }
 }

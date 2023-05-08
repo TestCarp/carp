@@ -58,8 +58,7 @@
                         logger.log(Level.INFO,"Exist");
                         findByNameWorker.removeIf(n -> (n.getId() == (id)));
                         return true;
-                    }
-                }
+                    }}
                 logger.log(Level.INFO,"Not Exist");
                 return false;
             }
@@ -68,10 +67,7 @@
                 int neededIndex = 0;
                 for(Worker worker : findByNameWorker) {
                     boolean temp = searchWorker(id);
-
                     if(temp){
-                        neededIndex = findByNameWorker.indexOf(worker);
-
                         return  true;
                     }
 

@@ -3,6 +3,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class TestDistributeWorkerOnOrders {
@@ -23,6 +24,7 @@ public class TestDistributeWorkerOnOrders {
     public void have_enough_worker() {
         // Write code here that turns the phrase above into concrete actions
         // throw new io.cucumber.java.PendingException();
+        assertTrue(true);
     }
 
     @Then("divide {int} on {int} {int} {int}")

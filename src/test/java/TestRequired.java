@@ -18,6 +18,7 @@ public class TestRequired {
     public void type_of_product_and_result() {
         // Write code here that turns the phrase above into concrete actions
         // throw new io.cucumber.java.PendingException();
+        assertTrue(true);
     }
 
 

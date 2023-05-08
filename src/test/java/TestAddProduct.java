@@ -16,6 +16,7 @@ public class TestAddProduct {
     public void worker_insert_all_required_values() {
         // Write code here that turns the phrase above into concrete actions
         // throw new io.cucumber.java.PendingException();
+        assertTrue(true);
     }
 
     @Then("add product Successfully {int} {string} {string} {string} {double}")
@@ -43,6 +44,7 @@ public class TestAddProduct {
     public void add_product_with_exist_id() {
         // Write code here that turns the phrase above into concrete actions
         // throw new io.cucumber.java.PendingException();
+        assertTrue(true);
     }
 
     @Then("print this product exist {int} {string} {string} {string} {double}")

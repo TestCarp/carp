@@ -1,7 +1,7 @@
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class TestSendEmail {
 
@@ -46,7 +46,7 @@ public class TestSendEmail {
                 actualResult = 1;
             }
         }
-        assertTrue(actualResult == expectedResult);
+        assertEquals(actualResult , expectedResult);
 
     }
 
@@ -82,7 +82,7 @@ public class TestSendEmail {
                 actualResult = 1;
             }
         }
-        assertTrue(actualResult != expectedResult);
+        assertNotEquals(actualResult , expectedResult);
 
     }
 }

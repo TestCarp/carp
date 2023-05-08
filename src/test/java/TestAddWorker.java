@@ -49,7 +49,7 @@ public class TestAddWorker {
         w1.addProduct(p6);
 
         boolean foundWorker = a.searchWorker(2);
-        assertFalse(foundWorker);
+        assertTrue(!foundWorker);
 
     }
 
@@ -64,6 +64,7 @@ public class TestAddWorker {
         // Write code here that turns the phrase above into concrete actions
         // throw new io.cucumber.java.PendingException();
     }
+
     @Test
 
     @Then("the worker should not be added to the list")

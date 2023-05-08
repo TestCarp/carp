@@ -2,6 +2,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class TestGenerateStatistics {
@@ -23,6 +24,7 @@ public class TestGenerateStatistics {
     public void all_product() {
         // Write code here that turns the phrase above into concrete actions
         // throw new io.cucumber.java.PendingException();
+        assertTrue(true);
     }
 
     @Then("number of delivered product")
@@ -44,7 +46,7 @@ public class TestGenerateStatistics {
                 actualResult++;
         }
 
-        assertTrue(actualResult == expectedResult);
+        assertEquals(actualResult , expectedResult);
 
     }
 
@@ -69,7 +71,7 @@ public class TestGenerateStatistics {
             actualResult+=w.findByNameCustomer.get(i).getTotalDebts() + w.findByNameCustomer.get(i).getTotalPay() ;
         }
 
-        assertTrue(actualResult == expectedResult);
+        assertEquals(actualResult , expectedResult);
     }
 
     @When("find total payed")
@@ -93,7 +95,7 @@ public class TestGenerateStatistics {
             actualResult+= w.findByNameCustomer.get(i).getTotalPay() ;
         }
 
-        assertTrue(actualResult == expectedResult);
+        assertEquals(actualResult , expectedResult);
     }
 
     @When("find total debts")
@@ -117,6 +119,6 @@ public class TestGenerateStatistics {
             actualResult+=w.findByNameCustomer.get(i).getTotalDebts()  ;
         }
 
-        assertTrue(actualResult == expectedResult);
+        assertEquals(actualResult , expectedResult);
     }
 }

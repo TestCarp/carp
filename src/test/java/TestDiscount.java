@@ -2,8 +2,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Test;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class TestDiscount {
     Worker w1 = new Worker();
@@ -30,19 +29,19 @@ public class TestDiscount {
             if (w1.searchCustomer(1)) {
                 if (w1.findByNameCustomer.get(i).getTotalPay() < 1000) {
                     actualResult = true;
-                    assertTrue(actualResult == expectedResult);
+                    assertEquals(actualResult , expectedResult);
                 } else if (w1.findByNameCustomer.get(i).getTotalPay() > 1000 && w1.findByNameCustomer.get(i).getTotalPay() <= 1500) {
                     actualResult = true;
-                    assertTrue(actualResult == expectedResult);
+                    assertEquals(actualResult , expectedResult);
                 } else if (w1.findByNameCustomer.get(i).getTotalPay() > 1500 && w1.findByNameCustomer.get(i).getTotalPay() <= 2000) {
                     actualResult = true;
-                    assertTrue(actualResult == expectedResult);
+                    assertEquals(actualResult , expectedResult);
                 } else if (w1.findByNameCustomer.get(i).getTotalPay() > 2000 && w1.findByNameCustomer.get(i).getTotalPay() <= 3000) {
                     actualResult = true;
-                    assertTrue(actualResult == expectedResult);
+                    assertEquals(actualResult , expectedResult);
                 } else if (w1.findByNameCustomer.get(i).getTotalPay() > 3000) {
                     actualResult = true;
-                    assertTrue(actualResult == expectedResult);
+                    assertEquals(actualResult , expectedResult);
                 }
 
             } else

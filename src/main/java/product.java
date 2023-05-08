@@ -1,10 +1,12 @@
 public class product {
 
     private int productId;
-    private String dimenssion , category , picture ;
-    private boolean isRequiredSpecialTreatment , isComplete;
-    public boolean  productDone;
-    public int productStatus;
+    private String dimenssion ;
+    private String category ;
+    private String picture ;
+    private boolean isRequiredSpecialTreatment ;
+    protected boolean  productDone;
+    protected int productStatus;
     private double cost ;
 
     ////////////////////////////////

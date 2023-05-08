@@ -59,10 +59,10 @@ Current scope:     <a href="../../index.html">all classes</a>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    64%
+    57.9%
   </span>
   <span class="absValue">
-    (32/50)
+    (33/57)
   </span>
 </td>
 </tr>
@@ -134,37 +134,36 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;                        logger.log(Level.INFO,&quot;Exist&quot;);</b>
 <b class="fc">&nbsp;                        findByNameWorker.removeIf(n -&gt; (n.getId() == (id)));</b>
 <b class="fc">&nbsp;                        return true;</b>
-&nbsp;                    }
-<b class="nc">&nbsp;                }</b>
+<b class="nc">&nbsp;                    }}</b>
 <b class="fc">&nbsp;                logger.log(Level.INFO,&quot;Not Exist&quot;);</b>
 <b class="fc">&nbsp;                return false;</b>
-&nbsp;            }
+<b class="fc">&nbsp;            }</b>
 &nbsp;
 &nbsp;            public boolean updateWorker(Worker toUpdate,int id){
 <b class="nc">&nbsp;                int neededIndex = 0;</b>
 <b class="nc">&nbsp;                for(Worker worker : findByNameWorker) {</b>
 <b class="nc">&nbsp;                    boolean temp = searchWorker(id);</b>
-&nbsp;
+<b class="nc">&nbsp;</b>
 <b class="nc">&nbsp;                    if(temp){</b>
 <b class="nc">&nbsp;                        neededIndex = findByNameWorker.indexOf(worker);</b>
-&nbsp;
+<b class="nc">&nbsp;</b>
 <b class="nc">&nbsp;                        return  true;</b>
-&nbsp;                    }
+<b class="nc">&nbsp;                    }</b>
 &nbsp;
 <b class="nc">&nbsp;                }</b>
 <b class="nc">&nbsp;                findByNameWorker.set(neededIndex-1,toUpdate);</b>
 <b class="nc">&nbsp;                return false;</b>
-&nbsp;            }
+<b class="nc">&nbsp;            }</b>
 &nbsp;
 &nbsp;            // 2) Feature to Distribute Workers on products
 &nbsp;            public void distributeWorkerOnProducts(int actualNumberOfOrders){
 &nbsp;
-<b class="fc">&nbsp;                int actualNumberOfWorkers = 0 ;</b>
+<b class="nc">&nbsp;                int actualNumberOfWorkers = 0 ;</b>
 <b class="fc">&nbsp;                for(int i = 0 ; i &lt; findByNameWorker.size(); i++){</b>
 <b class="fc">&nbsp;                    actualNumberOfWorkers++;</b>
-&nbsp;                }
+<b class="fc">&nbsp;                }</b>
 &nbsp;
-<b class="fc">&nbsp;                String message1 = String.format(&quot;Total number of workers: %d&quot;,(actualNumberOfWorkers*100));</b>
+<b class="nc">&nbsp;                String message1 = String.format(&quot;Total number of workers: %d&quot;,(actualNumberOfWorkers*100));</b>
 <b class="fc">&nbsp;                String message2 = String.format(&quot;The number of Orders: %d&quot;,actualNumberOfOrders);</b>
 <b class="fc">&nbsp;                String message3 = String.format(&quot;The number of bussy Worker: %d&quot;,(4*actualNumberOfOrders));</b>
 <b class="fc">&nbsp;                String message4 = String.format(&quot;The number of available worker: %d&quot;,((actualNumberOfWorkers*100) - (4*actualNumberOfOrders)));</b>
@@ -172,7 +171,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;                logger.log(Level.INFO,message2);</b>
 <b class="fc">&nbsp;                logger.log(Level.INFO,message3);</b>
 <b class="fc">&nbsp;                logger.log(Level.INFO,message4);</b>
-&nbsp;
+<b class="fc">&nbsp;</b>
 &nbsp;
 &nbsp;
 &nbsp;            }
@@ -203,7 +202,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2023-05-08 20:24</div>
+    <div style="float:right;">generated on 2023-05-08 20:48</div>
 </div>
 </body>
 </html>
