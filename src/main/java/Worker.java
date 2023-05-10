@@ -82,30 +82,6 @@ public class Worker {
         return false;
     }
 
-    public boolean updateProduct(product toUpdate,int id){
-        int neededIndex = 0;
-        for(product product : findByNameProduct) {
-            boolean temp = searchProduct(id);
-
-            logger.log(Level.INFO,"{0}",temp);
-            if(temp){
-                logger.log(Level.INFO,"{0}",findByNameProduct.indexOf(product));
-                return  true;
-            }
-
-        }
-        findByNameProduct.set(neededIndex-1,toUpdate);
-        return false;
-    }
-
-
-    /////
-    ////////////////////////////////////////////////////////////////////////
-    // Customer Methods
-
-
-    // add new Customer Method
-
     public boolean addCustomer(Customer newCustomer){
         for(Customer oldCustomer : findByNameCustomer){
             if(oldCustomer.getId() == newCustomer.getId() || oldCustomer.getEmail() .equals(newCustomer.getEmail()) || oldCustomer.getPhone() .equals(newCustomer.getPhone())){
@@ -146,33 +122,6 @@ public class Worker {
         }
         return false;
     }
-
-
-
-    /// to Update Customer
-
-    public void updateCustomer(Customer toUpdate,int id){
-        int neededIndex = 0;
-        for(Customer customer : findByNameCustomer) {
-            boolean temp = searchCustomer(id);
-
-            if(temp){
-                neededIndex = findByNameCustomer.indexOf(customer);
-
-            }
-
-        }
-        findByNameCustomer.set(neededIndex-1,toUpdate);
-    }
-
-    public void getCustomerData(){
-            for(Customer oldCustomer : findByNameCustomer){
-                logger.log(Level.INFO, "id: {0} Name: {1} Phone: {2} Address: {3} Email: {4}",
-                    new Object[] {oldCustomer.getId(), oldCustomer.getName(), oldCustomer.getPhone(), oldCustomer.getAddress(), oldCustomer.getEmail()});
-
-        }
-    }
-
 
 
     // General Methods

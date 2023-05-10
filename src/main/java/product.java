@@ -29,50 +29,29 @@ public class product {
     public boolean getProductDone(){
         return productDone;
     }
-
-
-
-
-    /////////////////////////////////
-
-
     public boolean isRequiredSpecialTreatment() {
         return isRequiredSpecialTreatment;
     }
-
-    public void setRequiredSpecialTreatment(boolean requiredSpecialTreatment) {
-        isRequiredSpecialTreatment = requiredSpecialTreatment;
-    }
-
+    public void setRequiredSpecialTreatment(boolean requiredSpecialTreatment) {isRequiredSpecialTreatment = requiredSpecialTreatment;}
     public String getDimenssion() {
         return dimenssion;
     }
-
-
     public int getProductId() {
         return productId;
     }
-
-
-
     public String getCategory() {
         return category;
     }
-
     public void setCategory(String category) {
         this.category = category;
     }
-
-    public String getPicture() {
-        return picture;
-    }
-
-
+    public String getPicture() {return picture;}
     public double getCost(){
         return  cost;
     }
-
-
-
-
+    public void setCost(double cost) {this.cost = cost;}
+    public void setProductId(int productId) {this.productId = productId;}
+    public void setDimenssion(String dimenssion) {this.dimenssion = dimenssion;}
+    public void setPicture(String picture) {this.picture = picture;}
+    public void setProductStatus(int productStatus) {this.productStatus = productStatus;}
 }

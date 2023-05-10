@@ -76,13 +76,13 @@
                 return false;
             }
 
-            // 2) Feature to Distribute Workers on products
+
+
             public void distributeWorkerOnProducts(int actualNumberOfOrders){
 
                 int actualNumberOfWorkers = 0 ;
-                for(int i = 0 ; i < findByNameWorker.size(); i++){
+                for(int i = 0 ; i < findByNameWorker.size(); i++)
                     actualNumberOfWorkers++;
-                }
 
                 String message1 = String.format("Total number of workers: %d",(actualNumberOfWorkers*100));
                 String message2 = String.format("The number of Orders: %d",actualNumberOfOrders);
@@ -92,11 +92,5 @@
                 logger.log(Level.INFO,message2);
                 logger.log(Level.INFO,message3);
                 logger.log(Level.INFO,message4);
-
-
-
             }
-
-
-
         }

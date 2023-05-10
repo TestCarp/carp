@@ -152,13 +152,13 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="nc">&nbsp;                return false;</b>
 <b class="nc">&nbsp;            }</b>
 <b class="nc">&nbsp;</b>
-<b class="nc">&nbsp;            // 2) Feature to Distribute Workers on products</b>
-<b class="nc">&nbsp;            public void distributeWorkerOnProducts(int actualNumberOfOrders){</b>
-&nbsp;
+<b class="nc">&nbsp;</b>
+<b class="nc">&nbsp;</b>
+&nbsp;            public void distributeWorkerOnProducts(int actualNumberOfOrders){
+<b class="fc">&nbsp;</b>
 <b class="fc">&nbsp;                int actualNumberOfWorkers = 0 ;</b>
-<b class="fc">&nbsp;                for(int i = 0 ; i &lt; findByNameWorker.size(); i++){</b>
-<b class="fc">&nbsp;                    actualNumberOfWorkers++;</b>
-<b class="nc">&nbsp;                }</b>
+<b class="fc">&nbsp;                for(int i = 0 ; i &lt; findByNameWorker.size(); i++)</b>
+<b class="nc">&nbsp;                    actualNumberOfWorkers++;</b>
 <b class="nc">&nbsp;</b>
 <b class="fc">&nbsp;                String message1 = String.format(&quot;Total number of workers: %d&quot;,(actualNumberOfWorkers*100));</b>
 <b class="fc">&nbsp;                String message2 = String.format(&quot;The number of Orders: %d&quot;,actualNumberOfOrders);</b>
@@ -168,14 +168,8 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;                logger.log(Level.INFO,message2);</b>
 <b class="fc">&nbsp;                logger.log(Level.INFO,message3);</b>
 <b class="fc">&nbsp;                logger.log(Level.INFO,message4);</b>
-<b class="nc">&nbsp;</b>
-<b class="nc">&nbsp;</b>
-<b class="nc">&nbsp;</b>
 <b class="nc">&nbsp;            }</b>
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;        }
+<b class="nc">&nbsp;        }</b>
 </code>
 </pre>
 </div>
@@ -199,7 +193,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2023-05-08 22:46</div>
+    <div style="float:right;">generated on 2023-05-10 18:22</div>
 </div>
 </body>
 </html>
