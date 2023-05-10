@@ -1,5 +1,8 @@
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.example.Customer;
+import org.example.Worker;
+import org.example.product;
 
 import static org.junit.Assert.assertTrue;
 

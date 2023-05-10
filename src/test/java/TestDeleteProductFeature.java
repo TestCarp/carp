@@ -1,6 +1,7 @@
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Ignore;
+import org.example.Worker;
+import org.example.product;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

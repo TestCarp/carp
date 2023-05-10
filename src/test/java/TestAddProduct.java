@@ -1,5 +1,7 @@
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.example.Worker;
+import org.example.product;
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
@@ -19,7 +21,7 @@ public class TestAddProduct {
         assertTrue(true);
     }
 
-    @Then("add product Successfully {int} {string} {string} {string} {double}")
+    @Then("add org.example.product Successfully {int} {string} {string} {string} {double}")
     public void add_product_successfully(Integer actualId, String actualCategory, String actualPicture, String actualDimenssion, Double actualCost) {
 
         w.addProduct(p);
@@ -40,14 +42,14 @@ public class TestAddProduct {
     }
 
     @Test
-    @When("add product with exist id")
+    @When("add org.example.product with exist id")
     public void add_product_with_exist_id() {
         // Write code here that turns the phrase above into concrete actions
         // throw new io.cucumber.java.PendingException();
         assertTrue(true);
     }
 
-    @Then("print this product exist {int} {string} {string} {string} {double}")
+    @Then("print this org.example.product exist {int} {string} {string} {string} {double}")
     public void print_this_product_exist(Integer actualId, String actualCategory, String actualPicture, String actualDimenssion, Double actualCost) {
         // Write code here that turns the phrase above into concrete actions
         // throw new io.cucumber.java.PendingException();

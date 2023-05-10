@@ -1,3 +1,5 @@
+package org.example;
+
 import java.util.Properties;
 
 import javax.mail.Message;
@@ -115,8 +117,8 @@ public class ControlClass {
 
 
 
-        // enter id for product to check status
-        // product status --- >  1 == complete
+        // enter id for org.example.product to check status
+        // org.example.product status --- >  1 == complete
         //                       2 == treatment
         //                       3 == waiting
         w1.trackOrder(3);

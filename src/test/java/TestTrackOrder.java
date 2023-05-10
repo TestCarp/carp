@@ -1,5 +1,8 @@
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.example.Admin;
+import org.example.Worker;
+import org.example.product;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -23,7 +26,7 @@ public class TestTrackOrder {
         assertTrue(true);
     }
 
-    @Then("show to user your product is in waiting")
+    @Then("show to user your org.example.product is in waiting")
     public void show_to_user_your_product_is_in_waiting() {
         // Write code here that turns the phrase above into concrete actions
         // throw new io.cucumber.java.PendingException();
@@ -59,7 +62,7 @@ public class TestTrackOrder {
         assertTrue(true);
     }
 
-    @Then("show to user your product is in treatment")
+    @Then("show to user your org.example.product is in treatment")
     public void show_to_user_your_product_is_in_treatment() {
         // Write code here that turns the phrase above into concrete actions
         // throw new io.cucumber.java.PendingException();
@@ -95,7 +98,7 @@ public class TestTrackOrder {
         assertTrue(true);
     }
 
-    @Then("show to user your product is in complete")
+    @Then("show to user your org.example.product is in complete")
     public void show_to_user_your_product_is_in_complete() {
         // Write code here that turns the phrase above into concrete actions
         // throw new io.cucumber.java.PendingException();

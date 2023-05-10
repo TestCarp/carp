@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > Admin</title>
+  <title>Coverage Report > org.example.Admin</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -21,7 +21,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">&lt;empty package name&gt;</a>
 </div>
 
-<h1>Coverage Summary for Class: Admin (&lt;empty package name&gt;)</h1>
+<h1>Coverage Summary for Class: org.example.Admin (&lt;empty package name&gt;)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -40,7 +40,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">Admin</td>
+  <td class="name">org.example.Admin</td>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -79,11 +79,11 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;
 &nbsp;        import java.util.logging.Level;
 &nbsp;        import java.util.logging.Logger;
-<b class="fc">&nbsp;        public class Admin {</b>
+<b class="fc">&nbsp;        public class org.example.Admin {</b>
 &nbsp;
-<b class="fc">&nbsp;            Logger logger = Logger.getLogger(Admin.class.getName());</b>
+<b class="fc">&nbsp;            Logger logger = Logger.getLogger(org.example.Admin.class.getName());</b>
 &nbsp;
-<b class="fc">&nbsp;            protected List&lt;Worker&gt; findByNameWorker = new ArrayList&lt;&gt;();</b>
+<b class="fc">&nbsp;            protected List&lt;org.example.Worker&gt; findByNameWorker = new ArrayList&lt;&gt;();</b>
 &nbsp;            private String email ;
 &nbsp;            private String password;
 &nbsp;
@@ -105,20 +105,20 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;            }
 &nbsp;            ////////////////////////////////////////// methods
 &nbsp;
-&nbsp;            public boolean addWorker(Worker newWorker){
-<b class="fc">&nbsp;                for(Worker oldWorker : findByNameWorker){</b>
+&nbsp;            public boolean addWorker(org.example.Worker newWorker){
+<b class="fc">&nbsp;                for(org.example.Worker oldWorker : findByNameWorker){</b>
 <b class="nc">&nbsp;                    if(oldWorker.getId()==(newWorker.getId())){</b>
-<b class="nc">&nbsp;                        logger.log(Level.INFO,&quot;Worker is Exist&quot;);</b>
+<b class="nc">&nbsp;                        logger.log(Level.INFO,&quot;org.example.Worker is Exist&quot;);</b>
 <b class="nc">&nbsp;                        return true;</b>
 &nbsp;                    }
 <b class="nc">&nbsp;                }</b>
-<b class="fc">&nbsp;                logger.log(Level.INFO,&quot;Worker will added to list&quot;);</b>
+<b class="fc">&nbsp;                logger.log(Level.INFO,&quot;org.example.Worker will added to list&quot;);</b>
 <b class="fc">&nbsp;                findByNameWorker.add(newWorker);</b>
 <b class="fc">&nbsp;                return false;</b>
 &nbsp;            }
 &nbsp;
 &nbsp;            public boolean searchWorker(int id){
-<b class="fc">&nbsp;                for(Worker existWorker : findByNameWorker){</b>
+<b class="fc">&nbsp;                for(org.example.Worker existWorker : findByNameWorker){</b>
 <b class="fc">&nbsp;                    if(existWorker.getId() == (id)){</b>
 <b class="fc">&nbsp;                        logger.log(Level.INFO,&quot;Exist&quot;);</b>
 <b class="fc">&nbsp;                        return true;</b>
@@ -129,7 +129,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;            }
 &nbsp;
 &nbsp;            public boolean deleteWorker(int id){
-<b class="fc">&nbsp;                for(Worker existWorker : findByNameWorker){</b>
+<b class="fc">&nbsp;                for(org.example.Worker existWorker : findByNameWorker){</b>
 <b class="fc">&nbsp;                    if(existWorker.getId()== (id)){</b>
 <b class="fc">&nbsp;                        logger.log(Level.INFO,&quot;Exist&quot;);</b>
 <b class="fc">&nbsp;                        findByNameWorker.removeIf(n -&gt; (n.getId() == (id)));</b>
@@ -139,9 +139,9 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;                return false;</b>
 <b class="fc">&nbsp;            }</b>
 &nbsp;
-&nbsp;            public boolean updateWorker(Worker toUpdate,int id){
+&nbsp;            public boolean updateWorker(org.example.Worker toUpdate,int id){
 <b class="nc">&nbsp;                int neededIndex = 0;</b>
-<b class="nc">&nbsp;                for(Worker worker : findByNameWorker) {</b>
+<b class="nc">&nbsp;                for(org.example.Worker worker : findByNameWorker) {</b>
 <b class="nc">&nbsp;                    boolean temp = searchWorker(id);</b>
 <b class="nc">&nbsp;                    if(temp){</b>
 <b class="nc">&nbsp;                        return  true;</b>
@@ -162,7 +162,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="nc">&nbsp;</b>
 <b class="fc">&nbsp;                String message1 = String.format(&quot;Total number of workers: %d&quot;,(actualNumberOfWorkers*100));</b>
 <b class="fc">&nbsp;                String message2 = String.format(&quot;The number of Orders: %d&quot;,actualNumberOfOrders);</b>
-<b class="fc">&nbsp;                String message3 = String.format(&quot;The number of bussy Worker: %d&quot;,(4*actualNumberOfOrders));</b>
+<b class="fc">&nbsp;                String message3 = String.format(&quot;The number of bussy org.example.Worker: %d&quot;,(4*actualNumberOfOrders));</b>
 <b class="fc">&nbsp;                String message4 = String.format(&quot;The number of available worker: %d&quot;,((actualNumberOfWorkers*100) - (4*actualNumberOfOrders)));</b>
 <b class="fc">&nbsp;                logger.log(Level.INFO,message1);</b>
 <b class="fc">&nbsp;                logger.log(Level.INFO,message2);</b>

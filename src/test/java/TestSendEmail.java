@@ -1,5 +1,8 @@
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.example.Admin;
+import org.example.Worker;
+import org.example.product;
 
 import static org.junit.Assert.*;
 
@@ -56,7 +59,7 @@ public class TestSendEmail {
         // throw new io.cucumber.java.PendingException();
     }
 
-    @Then("print your product is not incomplete yet")
+    @Then("print your org.example.product is not incomplete yet")
     public void print_your_product_is_not_incomplete_yet() {
         // Write code here that turns the phrase above into concrete actions
         // throw new io.cucumber.java.PendingException();

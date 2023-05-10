@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > Worker</title>
+  <title>Coverage Report > org.example.Worker</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -21,7 +21,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">&lt;empty package name&gt;</a>
 </div>
 
-<h1>Coverage Summary for Class: Worker (&lt;empty package name&gt;)</h1>
+<h1>Coverage Summary for Class: org.example.Worker (&lt;empty package name&gt;)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -40,7 +40,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">Worker</td>
+  <td class="name">org.example.Worker</td>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -79,24 +79,24 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;import java.util.logging.Level;
 &nbsp;import java.util.logging.Logger;
 &nbsp;
-&nbsp;public class Worker {
+&nbsp;public class org.example.Worker {
 <b class="fc">&nbsp;    private int id ;</b>
 <b class="fc">&nbsp;</b>
 &nbsp;
 &nbsp;    private String name ;
 <b class="nc">&nbsp;    private String phone ;</b>
 <b class="nc">&nbsp;    private String address ;</b>
-<b class="fc">&nbsp;    protected List&lt;product&gt; findByNameProduct = new ArrayList&lt;&gt;();</b>
-<b class="fc">&nbsp;    protected List&lt;Customer&gt; findByNameCustomer = new ArrayList&lt;&gt;();</b>
+<b class="fc">&nbsp;    protected List&lt;org.example.product&gt; findByNameProduct = new ArrayList&lt;&gt;();</b>
+<b class="fc">&nbsp;    protected List&lt;org.example.Customer&gt; findByNameCustomer = new ArrayList&lt;&gt;();</b>
 <b class="nc">&nbsp;</b>
-<b class="fc">&nbsp;    Logger logger = Logger.getLogger(Worker.class.getName());</b>
-<b class="fc">&nbsp;    public Worker(int id , String name , String address , String phone){</b>
+<b class="fc">&nbsp;    Logger logger = Logger.getLogger(org.example.Worker.class.getName());</b>
+<b class="fc">&nbsp;    public org.example.Worker(int id , String name , String address , String phone){</b>
 <b class="nc">&nbsp;        this.id = id ;</b>
 <b class="nc">&nbsp;        this.name = name;</b>
 <b class="nc">&nbsp;        this.address = address;</b>
 <b class="fc">&nbsp;        this.phone = phone;</b>
 &nbsp;    }
-<b class="fc">&nbsp;    public Worker(){}</b>
+<b class="fc">&nbsp;    public org.example.Worker(){}</b>
 <b class="fc">&nbsp;    // Setters and Getters</b>
 &nbsp;
 &nbsp;    public void setId(int id){
@@ -124,8 +124,8 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="nc">&nbsp;        return phone;</b>
 <b class="nc">&nbsp;    }</b>
 &nbsp;
-<b class="fc">&nbsp;    public boolean addProduct(product newProduct){</b>
-<b class="fc">&nbsp;        for(product oldProduct : findByNameProduct){</b>
+<b class="fc">&nbsp;    public boolean addProduct(org.example.product newProduct){</b>
+<b class="fc">&nbsp;        for(org.example.product oldProduct : findByNameProduct){</b>
 <b class="fc">&nbsp;            if(oldProduct.getProductId()==(newProduct.getProductId())){</b>
 <b class="fc">&nbsp;</b>
 <b class="nc">&nbsp;                return true;</b>
@@ -137,7 +137,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;    }</b>
 &nbsp;
 <b class="nc">&nbsp;    public boolean searchProduct(int id){</b>
-<b class="fc">&nbsp;        for(product existProduct : findByNameProduct){</b>
+<b class="fc">&nbsp;        for(org.example.product existProduct : findByNameProduct){</b>
 <b class="fc">&nbsp;            if(existProduct.getProductId() ==(id)){</b>
 &nbsp;
 <b class="fc">&nbsp;                return true;</b>
@@ -148,7 +148,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;    }</b>
 &nbsp;
 <b class="fc">&nbsp;    public boolean deleteProduct(int id){</b>
-<b class="fc">&nbsp;        for(product existProduct : findByNameProduct){</b>
+<b class="fc">&nbsp;        for(org.example.product existProduct : findByNameProduct){</b>
 <b class="fc">&nbsp;            if(existProduct.getProductId()== (id)){</b>
 <b class="fc">&nbsp;                findByNameProduct.removeIf(n -&gt; (n.getProductId() == (id)));</b>
 <b class="fc">&nbsp;                return true;</b>
@@ -158,8 +158,8 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;        return false;</b>
 <b class="nc">&nbsp;    }</b>
 <b class="nc">&nbsp;</b>
-<b class="nc">&nbsp;    public boolean addCustomer(Customer newCustomer){</b>
-<b class="fc">&nbsp;        for(Customer oldCustomer : findByNameCustomer){</b>
+<b class="nc">&nbsp;    public boolean addCustomer(org.example.Customer newCustomer){</b>
+<b class="fc">&nbsp;        for(org.example.Customer oldCustomer : findByNameCustomer){</b>
 <b class="fc">&nbsp;            if(oldCustomer.getId() == newCustomer.getId() || oldCustomer.getEmail() .equals(newCustomer.getEmail()) || oldCustomer.getPhone() .equals(newCustomer.getPhone())){</b>
 <b class="nc">&nbsp;                return true;</b>
 &nbsp;            }
@@ -168,9 +168,9 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;        return false;</b>
 <b class="nc">&nbsp;    }</b>
 &nbsp;
-&nbsp;    // /////  Search about specific Customer Method
+&nbsp;    // /////  Search about specific org.example.Customer Method
 <b class="nc">&nbsp;    public boolean searchCustomer(int id){</b>
-<b class="fc">&nbsp;        for(Customer existCustomer : findByNameCustomer){</b>
+<b class="fc">&nbsp;        for(org.example.Customer existCustomer : findByNameCustomer){</b>
 <b class="fc">&nbsp;            if(existCustomer.getId() == id){</b>
 &nbsp;
 <b class="fc">&nbsp;                return true;</b>
@@ -181,7 +181,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;    }</b>
 <b class="nc">&nbsp;</b>
 <b class="nc">&nbsp;    public boolean searchCustomerByEmail(String email){</b>
-<b class="fc">&nbsp;        for(Customer existCustomer : findByNameCustomer){</b>
+<b class="fc">&nbsp;        for(org.example.Customer existCustomer : findByNameCustomer){</b>
 <b class="fc">&nbsp;            if(existCustomer.getEmail().equals(email)){</b>
 <b class="fc">&nbsp;                return true;</b>
 <b class="fc">&nbsp;            }</b>
@@ -190,7 +190,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;    }</b>
 <b class="fc">&nbsp;</b>
 <b class="fc">&nbsp;    public boolean deleteCustomer(int id){</b>
-<b class="fc">&nbsp;        for(Customer existCustomer : findByNameCustomer){</b>
+<b class="fc">&nbsp;        for(org.example.Customer existCustomer : findByNameCustomer){</b>
 <b class="fc">&nbsp;            if(existCustomer.getId() == id){</b>
 <b class="fc">&nbsp;                findByNameCustomer.removeIf(n -&gt; (n.getId() == (id)));</b>
 <b class="fc">&nbsp;                return true;</b>
@@ -246,13 +246,13 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="nc">&nbsp;</b>
 <b class="nc">&nbsp;                if((!findByNameProduct.get(i).getProductDone())) {</b>
 <b class="nc">&nbsp;                    if (findByNameProduct.get(i).getProductStatus() == 1) {</b>
-<b class="nc">&nbsp;                        logger.log(Level.INFO,&quot;Your product is complete!!&quot;);</b>
+<b class="nc">&nbsp;                        logger.log(Level.INFO,&quot;Your org.example.product is complete!!&quot;);</b>
 <b class="nc">&nbsp;                        break;</b>
 <b class="nc">&nbsp;                    } else if ((findByNameProduct.get(i).getProductStatus() == 2)) {</b>
-<b class="nc">&nbsp;                        logger.log(Level.INFO,&quot;Your product is treatment!!&quot;);</b>
+<b class="nc">&nbsp;                        logger.log(Level.INFO,&quot;Your org.example.product is treatment!!&quot;);</b>
 <b class="nc">&nbsp;                        break;</b>
 <b class="nc">&nbsp;                    } else if ((findByNameProduct.get(i).getProductStatus() == 3)) {</b>
-<b class="nc">&nbsp;                        logger.log(Level.INFO,&quot;Your product is waiting!!&quot;);</b>
+<b class="nc">&nbsp;                        logger.log(Level.INFO,&quot;Your org.example.product is waiting!!&quot;);</b>
 <b class="nc">&nbsp;                        break;</b>
 &nbsp;                    }
 &nbsp;                    else {
@@ -261,14 +261,14 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;                    }</b>
 <b class="nc">&nbsp;                }</b>
 <b class="fc">&nbsp;                else {</b>
-<b class="nc">&nbsp;                    logger.log(Level.INFO,&quot;Your product was Delivered &quot;);</b>
+<b class="nc">&nbsp;                    logger.log(Level.INFO,&quot;Your org.example.product was Delivered &quot;);</b>
 <b class="nc">&nbsp;                    break;</b>
 <b class="nc">&nbsp;                }</b>
 <b class="nc">&nbsp;</b>
 <b class="nc">&nbsp;            }</b>
 &nbsp;            }
 <b class="fc">&nbsp;            else {</b>
-<b class="fc">&nbsp;                logger.log(Level.INFO,&quot;Invalid product ID&quot;);</b>
+<b class="fc">&nbsp;                logger.log(Level.INFO,&quot;Invalid org.example.product ID&quot;);</b>
 <b class="fc">&nbsp;                break;</b>
 <b class="fc">&nbsp;            }</b>
 <b class="nc">&nbsp;</b>
@@ -292,7 +292,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;                    logger.log(Level.INFO,&quot;You will take : .30 discount&quot;);</b>
 <b class="fc">&nbsp;            }</b>
 <b class="fc">&nbsp;            else</b>
-<b class="nc">&nbsp;                logger.log(Level.INFO,&quot;Customer not found&quot;);</b>
+<b class="nc">&nbsp;                logger.log(Level.INFO,&quot;org.example.Customer not found&quot;);</b>
 <b class="nc">&nbsp;        }</b>
 <b class="nc">&nbsp;    }</b>
 <b class="nc">&nbsp;</b>
@@ -323,7 +323,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="nc">&nbsp;        }</b>
 <b class="nc">&nbsp;</b>
 <b class="nc">&nbsp;        if(flag1 == 1 &amp;&amp; flag2 == 1)</b>
-<b class="nc">&nbsp;            logger.log(Level.INFO, &quot;product id: {0}, product cost: {1}, customer address: {2}&quot;, new Object[] {pId, cost, address1});</b>
+<b class="nc">&nbsp;            logger.log(Level.INFO, &quot;org.example.product id: {0}, org.example.product cost: {1}, customer address: {2}&quot;, new Object[] {pId, cost, address1});</b>
 <b class="nc">&nbsp;</b>
 <b class="nc">&nbsp;        }</b>
 <b class="nc">&nbsp;</b>
@@ -336,7 +336,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="nc">&nbsp;            if ((searchCustomer(customerId) &amp;&amp; searchProduct(productId) &amp;&amp; searchCustomerByEmail(email)) &amp;&amp; (findByNameProduct.get(i).productStatus == 1 &amp;&amp; findByNameProduct.get(i).getProductId() == productId)) {</b>
 <b class="nc">&nbsp;</b>
 <b class="nc">&nbsp;                    status = &quot;Your Order Complete&quot;;</b>
-<b class="nc">&nbsp;                    SendMail.getSendEmail(status, email);</b>
+<b class="nc">&nbsp;                    org.example.SendMail.getSendEmail(status, email);</b>
 &nbsp;
 &nbsp;            }
 <b class="fc">&nbsp;        }</b>

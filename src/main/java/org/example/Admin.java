@@ -1,4 +1,6 @@
-        import java.util.ArrayList;
+package org.example;
+
+import java.util.ArrayList;
         import java.util.List;
 
         import java.util.logging.Level;
@@ -32,11 +34,11 @@
             public boolean addWorker(Worker newWorker){
                 for(Worker oldWorker : findByNameWorker){
                     if(oldWorker.getId()==(newWorker.getId())){
-                        logger.log(Level.INFO,"Worker is Exist");
+                        logger.log(Level.INFO,"org.example.Worker is Exist");
                         return true;
                     }
                 }
-                logger.log(Level.INFO,"Worker will added to list");
+                logger.log(Level.INFO,"org.example.Worker will added to list");
                 findByNameWorker.add(newWorker);
                 return false;
             }
@@ -86,7 +88,7 @@
 
                 String message1 = String.format("Total number of workers: %d",(actualNumberOfWorkers*100));
                 String message2 = String.format("The number of Orders: %d",actualNumberOfOrders);
-                String message3 = String.format("The number of bussy Worker: %d",(4*actualNumberOfOrders));
+                String message3 = String.format("The number of bussy org.example.Worker: %d",(4*actualNumberOfOrders));
                 String message4 = String.format("The number of available worker: %d",((actualNumberOfWorkers*100) - (4*actualNumberOfOrders)));
                 logger.log(Level.INFO,message1);
                 logger.log(Level.INFO,message2);

@@ -1,6 +1,8 @@
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.example.Worker;
+import org.example.product;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -15,7 +17,7 @@ public class TestNumberOfProducts {
     product p5 = new product(5,"Tufted Carpets","https://persiancarpet.com/images/making-a-tufted-rug.jpg","400X300",99.99,false,3);
     product p6 = new product(6,"Tufted Carpets","https://persiancarpet.com/images/making-a-tufted-rug.jpg","400X300",99.99,true,1);
 
-    @Given("There is a number of product in inventory")
+    @Given("There is a number of org.example.product in inventory")
     public void there_is_a_number_of_product_in_inventory() {
         // Write code here that turns the phrase above into concrete actions
         // throw new io.cucumber.java.PendingException();

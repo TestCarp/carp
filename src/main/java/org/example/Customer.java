@@ -1,3 +1,5 @@
+package org.example;
+
 public class Customer {
     private int id ;
     private String name ;
@@ -60,7 +62,7 @@ public class Customer {
     public double getTotalPay(){return totalPay;}
     ///////////////////////////////////////////////////////////////
 
-    // method to add new Customer
+    // method to add new org.example.Customer
     public Customer addCustomer(){
         return new Customer(id,name,phone,address,email,totalPay,totalDebts) ;
     }

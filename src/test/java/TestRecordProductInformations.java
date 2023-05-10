@@ -1,11 +1,12 @@
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.example.product;
 
 import static org.junit.Assert.*;
 
 public class TestRecordProductInformations {
     product p = new product();
-    @When("entered product data")
+    @When("entered org.example.product data")
     public void entered_product_data() {
         // Write code here that turns the phrase above into concrete actions
         // throw new io.cucumber.java.PendingException();

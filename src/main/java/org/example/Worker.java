@@ -1,3 +1,5 @@
+package org.example;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -92,7 +94,7 @@ public class Worker {
         return false;
     }
 
-    // /////  Search about specific Customer Method
+    // /////  Search about specific org.example.Customer Method
     public boolean searchCustomer(int id){
         for(Customer existCustomer : findByNameCustomer){
             if(existCustomer.getId() == id){
@@ -170,13 +172,13 @@ public class Worker {
 
                 if((!findByNameProduct.get(i).getProductDone())) {
                     if (findByNameProduct.get(i).getProductStatus() == 1) {
-                        logger.log(Level.INFO,"Your product is complete!!");
+                        logger.log(Level.INFO,"Your org.example.product is complete!!");
                         break;
                     } else if ((findByNameProduct.get(i).getProductStatus() == 2)) {
-                        logger.log(Level.INFO,"Your product is treatment!!");
+                        logger.log(Level.INFO,"Your org.example.product is treatment!!");
                         break;
                     } else if ((findByNameProduct.get(i).getProductStatus() == 3)) {
-                        logger.log(Level.INFO,"Your product is waiting!!");
+                        logger.log(Level.INFO,"Your org.example.product is waiting!!");
                         break;
                     }
                     else {
@@ -185,14 +187,14 @@ public class Worker {
                     }
                 }
                 else {
-                    logger.log(Level.INFO,"Your product was Delivered ");
+                    logger.log(Level.INFO,"Your org.example.product was Delivered ");
                     break;
                 }
 
             }
             }
             else {
-                logger.log(Level.INFO,"Invalid product ID");
+                logger.log(Level.INFO,"Invalid org.example.product ID");
                 break;
             }
 
@@ -216,7 +218,7 @@ public class Worker {
                     logger.log(Level.INFO,"You will take : .30 discount");
             }
             else
-                logger.log(Level.INFO,"Customer not found");
+                logger.log(Level.INFO,"org.example.Customer not found");
         }
     }
 
@@ -247,7 +249,7 @@ public class Worker {
         }
 
         if(flag1 == 1 && flag2 == 1)
-            logger.log(Level.INFO, "product id: {0}, product cost: {1}, customer address: {2}", new Object[] {pId, cost, address1});
+            logger.log(Level.INFO, "org.example.product id: {0}, org.example.product cost: {1}, customer address: {2}", new Object[] {pId, cost, address1});
 
         }
 

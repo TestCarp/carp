@@ -1,3 +1,5 @@
+package org.example;
+
 public class product {
 
     private int productId;

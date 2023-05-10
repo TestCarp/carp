@@ -1,5 +1,8 @@
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.example.Customer;
+import org.example.Worker;
+import org.example.product;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -15,19 +18,19 @@ public class TestGenerateStatistics {
     product p6 = new product(6,"Tufted Carpets","https://persiancarpet.com/images/making-a-tufted-rug.jpg","400X300",99.99,true,1);
 
 
-    // public Customer(int id , String name , String phone , String address , String email , double totalPay , double totalDebts)
+    // public org.example.Customer(int id , String name , String phone , String address , String email , double totalPay , double totalDebts)
     Customer c1 = new Customer(1,"Abdullah Ghassan Sholi" , "0592659066" , "Asira-Nablus" , "groupgroup060@gmail.com",200,200);
     Customer c2 = new Customer(2,"Ali Nabeel Hamadneh" , "0568347481" , "Asira-Nablus" , "groupgroup061@gmail.com",100,500);
 
     @Test
-    @When("all product")
+    @When("all org.example.product")
     public void all_product() {
         // Write code here that turns the phrase above into concrete actions
         // throw new io.cucumber.java.PendingException();
         assertTrue(true);
     }
 
-    @Then("number of delivered product")
+    @Then("number of delivered org.example.product")
     public void number_of_delivered_product() {
         // Write code here that turns the phrase above into concrete actions
         // throw new io.cucumber.java.PendingException();
