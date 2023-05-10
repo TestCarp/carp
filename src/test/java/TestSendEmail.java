@@ -6,6 +6,8 @@ import org.example.product;
 
 import static org.junit.Assert.*;
 
+
+
 public class TestSendEmail {
 
     Admin a = new Admin();
