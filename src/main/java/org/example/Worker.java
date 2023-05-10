@@ -12,8 +12,8 @@ public class Worker {
     private String name ;
     private String phone ;
     private String address ;
-    public List<product> findByNameProduct = new ArrayList<>();
-    public List<Customer> findByNameCustomer = new ArrayList<>();
+    public static final List<product> findByNameProduct = new ArrayList<>();
+    public static final List<Customer> findByNameCustomer = new ArrayList<>();
 
     Logger logger = Logger.getLogger(Worker.class.getName());
     public Worker(int id , String name , String address , String phone){

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
             Logger logger = Logger.getLogger(Admin.class.getName());
 
-            public List<Worker> findByNameWorker = new ArrayList<>();
+            public static final List<Worker> findByNameWorker = new ArrayList<>();
             private String email ;
             private String password;
 
